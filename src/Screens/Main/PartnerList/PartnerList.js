@@ -150,8 +150,8 @@ const PartnerList = ({navigation}) => {
 	const [companyN, setCompanyN] = useState('내 회사');
 	const [companyBizNum, setCompanyBizNum] = useState('');
 	const [companyBizHp, setCompanyBizHp] = useState('');
-	const [companyOpen, setCompanyOpen] = useState(false);
-	const [partnerOpen, setPartnerOpen] = useState(false);
+	const [companyOpen, setCompanyOpen] = useState(true);
+	const [partnerOpen, setPartnerOpen] = useState(true);
 
 	const dispatch = useDispatch();
 	const isFocused = useIsFocused();
@@ -753,9 +753,6 @@ const PartnerList = ({navigation}) => {
 						<PartnerTypeLabel onPress={() => setCompanyOpen(!companyOpen)}>
 							<Icon name="briefcase" size={17} ></Icon> {companyN} (
 							{bizFriend.length}){' '}
-							<Text style={{color: '#FFBB00', fontSize: 13}}>
-								{companyBizNum}
-							</Text>
 						</PartnerTypeLabel>
 						<Icon
 							name={companyOpen ? 'chevron-up' : 'chevron-down'}

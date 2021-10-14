@@ -356,7 +356,7 @@ function ChattingOrderList({
 							style={{flex: 1}}
 							color={ColorLowBlue}
 							onPress={() =>
-								Alert.alert('알림', '배송완료 처리하시겠습니까?', [
+								Alert.alert('알림', '거래완료 처리하시겠습니까?', [
 									{
 										text: '확인',
 										onPress: () => {
@@ -369,7 +369,8 @@ function ChattingOrderList({
 							}
 							disabled={block || exit}>
 							<ButtonLabel color={ColorBlue}>
-								{deliver_type === '배송주문' ? '배송' : '픽업'}완료
+								{/* {deliver_type === '배송주문' ? '배송' : '픽업'}완료 */}
+								거래완료
 							</ButtonLabel>
 						</ButtonBox>
 						<ButtonBox
@@ -384,15 +385,16 @@ function ChattingOrderList({
 				{state === 'complete' && (
 					<ButtonBox color={ColorLowBlue} disabled={true}>
 						<ButtonLabel color={ColorBlue}>
-							{deliver_type === '배송주문' ? '배송' : '픽업'}완료 처리된
-							주문입니다.
+							{/* {deliver_type === '배송주문' ? '배송' : '픽업'}완료 처리된
+							주문입니다. */}
+							거래완료 처리된 주문입니다.
 						</ButtonLabel>
 					</ButtonBox>
 				)}
 				{state === 'cancel' && (
 					<ButtonBox color={ColorLowRed} disabled={true}>
 						<ButtonLabel color={ColorRed}>
-							주문취소 처리된 주문입니다.
+							거래취소 처리된 주문입니다.
 						</ButtonLabel>
 					</ButtonBox>
 				)}

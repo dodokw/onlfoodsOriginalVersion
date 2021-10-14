@@ -454,7 +454,7 @@ const TodayEventDetail = ({navigation, route}) => {
 					</Wrap>
 				</ProductInfo>
 				<ProductDescription>
-					<ProductDescriptionLabel>행사설명</ProductDescriptionLabel>
+					<ProductDescriptionLabel>공지설명</ProductDescriptionLabel>
 					<ProductDescriptionText>{data.et_content}</ProductDescriptionText>
 				</ProductDescription>
 				<DocInfo>

@@ -58,16 +58,16 @@ const SettingBar = ({item, setStatus, status, seller}) => {
 
 const defaultStatus = {
 	customer: [
-		{id: 1, title: '단골 판매자 상품 등록 알람', push: 'Y'},
-		{id: 2, title: '단골 판매자 상품 수정 알람', push: 'Y'},
-		{id: 3, title: '단골 판매자 행사/할인 등록 알람', push: 'Y'},
+		{id: 1, title: '관심 판매자 상품 등록 알람', push: 'Y'},
+		{id: 2, title: '관심 판매자 상품 수정 알람', push: 'Y'},
+		{id: 3, title: '관심 판매자 공지 등록 알람', push: 'Y'},
 		{id: 4, title: '주문 완료 알람', push: 'Y'},
 		{id: 5, title: '판매자 채팅 알람', push: 'Y'},
 	],
 	seller: [
 		{id: 1, title: '주문 완료 알람', push: 'Y'},
 		{id: 2, title: '채팅 문의 알람', push: 'Y'},
-		{id: 3, title: '단골 신규 등록 알람', push: 'Y'},
+		{id: 3, title: '관심 신규 등록 알람', push: 'Y'},
 		{id: 4, title: '재고 소진 알람', push: 'Y'},
 	],
 };

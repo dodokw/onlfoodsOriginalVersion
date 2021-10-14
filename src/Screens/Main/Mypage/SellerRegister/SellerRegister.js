@@ -846,7 +846,7 @@ function SellerRegister({navigation, route}) {
 
 				<Dive />
 
-				<Title>거래채널</Title>
+				{/* <Title>거래채널</Title>
 				<Wrap>
 					<SelectButton
 						style={{marginRight: 5, height: 80}}
@@ -870,7 +870,7 @@ function SellerRegister({navigation, route}) {
 							B2C{'\n'}일반고객
 						</SelectButtonLabel>
 					</SelectButton>
-				</Wrap>
+				</Wrap> */}
 
 				<Title>결제방법</Title>
 				<Wrap style={{marginBottom: 10}}>
@@ -878,10 +878,10 @@ function SellerRegister({navigation, route}) {
 						style={{marginRight: 5}}
 						color={payment === '1'}
 						onPress={() => setPayMent('1')}>
-						<SelectButtonLabel color={payment === '1'}>현금</SelectButtonLabel>
+						<SelectButtonLabel color={payment === '1'}>당일결제</SelectButtonLabel>
 					</SelectButton>
 					<SelectButton color={payment === '2'} onPress={() => setPayMent('2')}>
-						<SelectButtonLabel color={payment === '2'}>카드</SelectButtonLabel>
+						<SelectButtonLabel color={payment === '2'}>말일결제</SelectButtonLabel>
 					</SelectButton>
 				</Wrap>
 				<Wrap>
@@ -890,11 +890,11 @@ function SellerRegister({navigation, route}) {
 						color={payment === '3'}
 						onPress={() => setPayMent('3')}>
 						<SelectButtonLabel color={payment === '3'}>
-							온누리상품권
+							익월 10일
 						</SelectButtonLabel>
 					</SelectButton>
 					<SelectButton color={payment === '4'} onPress={() => setPayMent('4')}>
-						<SelectButtonLabel color={payment === '4'}>기타</SelectButtonLabel>
+						<SelectButtonLabel color={payment === '4'}>협의</SelectButtonLabel>
 					</SelectButton>
 				</Wrap>
 

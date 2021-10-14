@@ -168,7 +168,7 @@ function EventManagement({navigation}) {
 	return (
 		<Container>
 			<Header
-				title="행사 관리"
+				title="공지 관리"
 				headerLeft={<BackButton onPress={() => navigation.goBack()} />}
 				headerRight={
 					<SwitchingButton onToggle={state} disabled={true} border={true} />

@@ -368,7 +368,7 @@ const TodayEvent = ({navigation}) => {
 								onEndReached={addList}
 								ListEmptyComponent={
 									!dataLoading && (
-										<ListWarningLabel>오늘의 행사가 없습니다.</ListWarningLabel>
+										<ListWarningLabel>공지가 없습니다.</ListWarningLabel>
 									)
 								}
 								refreshControl={
@@ -395,7 +395,7 @@ const TodayEvent = ({navigation}) => {
 					distance={distance}
 				/>
 			</Animated.View>
-			<Header title="오늘의 행사" absolute />
+			<Header title="공지사항" absolute />
 		</Container>
 	);
 };

@@ -119,11 +119,11 @@ const EventCard = ({
 		try {
 			const res = await APIDelTodayEvent(user.mt_info.mt_idx, item.et_idx);
 			if (res.result === 'true') {
-				Alert.alert('알림', '오늘의 행사 아이템이 삭제 되었습니다.', [
+				Alert.alert('알림', '공지가 삭제 되었습니다.', [
 					{text: '확인', onPress: () => getData()},
 				]);
 			} else {
-				Alert.alert('알림', '오늘의 행사 아이템 삭제를 실패하였습니다.', [
+				Alert.alert('알림', '공지 삭제를 실패하였습니다.', [
 					{text: '확인'},
 				]);
 			}

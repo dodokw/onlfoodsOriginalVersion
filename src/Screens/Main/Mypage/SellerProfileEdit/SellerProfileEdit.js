@@ -1015,7 +1015,7 @@ const SellerProfileEdit = ({navigation, route}) => {
 						</InputBox>
 					</RowWrap>
 					<Dive style={{height: 1}} />
-					<ProfileInfoLabel style={{marginTop: 10}}>거래채널</ProfileInfoLabel>
+					{/* <ProfileInfoLabel style={{marginTop: 10}}>거래채널</ProfileInfoLabel>
 					<RowWrap>
 						<SelectButton
 							style={{marginRight: 5, height: 80}}
@@ -1041,7 +1041,7 @@ const SellerProfileEdit = ({navigation, route}) => {
 								B2C{'\n'}일반고객
 							</SelectButtonLabel>
 						</SelectButton>
-					</RowWrap>
+					</RowWrap> */}
 					<ProfileInfoLabel style={{marginTop: 10}}>결제방법</ProfileInfoLabel>
 					<RowWrap style={{marginBottom: 10}}>
 						<SelectButton
@@ -1049,14 +1049,14 @@ const SellerProfileEdit = ({navigation, route}) => {
 							color={payment === '1'}
 							onPress={() => setPayMent('1')}>
 							<SelectButtonLabel color={payment === '1'}>
-								현금
+								당일결제
 							</SelectButtonLabel>
 						</SelectButton>
 						<SelectButton
 							color={payment === '2'}
 							onPress={() => setPayMent('2')}>
 							<SelectButtonLabel color={payment === '2'}>
-								카드
+								말일결제
 							</SelectButtonLabel>
 						</SelectButton>
 					</RowWrap>
@@ -1066,14 +1066,14 @@ const SellerProfileEdit = ({navigation, route}) => {
 							color={payment === '3'}
 							onPress={() => setPayMent('3')}>
 							<SelectButtonLabel color={payment === '3'}>
-								온누리상품권
+								익월 10일
 							</SelectButtonLabel>
 						</SelectButton>
 						<SelectButton
 							color={payment === '4'}
 							onPress={() => setPayMent('4')}>
 							<SelectButtonLabel color={payment === '4'}>
-								기타
+								협의
 							</SelectButtonLabel>
 						</SelectButton>
 					</RowWrap>

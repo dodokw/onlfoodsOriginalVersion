@@ -175,7 +175,7 @@ export const APICallZzimList = async (seller, mt_idx) => {
 
 export const APICallZzimTodayInOrderList = async (seller, user, date) => {
 	try {
-		console.log('찜 오늘입고 리스트');
+		console.log('관심 오늘만 리스트');
 		const form = new FormData();
 		form.append('secretKey', secretKey);
 		form.append('mt_idx', seller);
@@ -191,7 +191,7 @@ export const APICallZzimTodayInOrderList = async (seller, user, date) => {
 
 export const APICallZzimSupplyOrderList = async (seller, user, date) => {
 	try {
-		console.log('찜 공급업체 리스트');
+		console.log('관심 추천업체 리스트');
 		const form = new FormData();
 		form.append('secretKey', secretKey);
 		form.append('mt_idx', seller);
@@ -207,7 +207,7 @@ export const APICallZzimSupplyOrderList = async (seller, user, date) => {
 
 export const APICallSellerTodayInOrderList = async (mt_idx, date) => {
 	try {
-		console.log('판매자 오늘입고 리스트');
+		console.log('판매자 오늘만 리스트');
 
 		const form = new FormData();
 		form.append('secretKey', secretKey);
@@ -224,7 +224,7 @@ export const APICallSellerTodayInOrderList = async (mt_idx, date) => {
 
 export const APICallTodayInOrderList = async mt_idx => {
 	try {
-		console.log('구매자 오늘입고 리스트');
+		console.log('구매자 오늘만 리스트');
 		const form = new FormData();
 		form.append('secretKey', secretKey);
 		form.append('mt_idx', mt_idx);
@@ -239,7 +239,7 @@ export const APICallTodayInOrderList = async mt_idx => {
 
 export const APICallSellerSupplyOrderList = async (mt_idx, date) => {
 	try {
-		console.log('판매자 공급 리스트');
+		console.log('판매자 추천업체 리스트');
 		const form = new FormData();
 		form.append('secretKey', secretKey);
 		form.append('mt_idx', mt_idx);
@@ -255,7 +255,7 @@ export const APICallSellerSupplyOrderList = async (mt_idx, date) => {
 
 export const APICallSupplyOrderList = async mt_idx => {
 	try {
-		console.log('구매자 공급 리스트');
+		console.log('구매자 추천업체 리스트');
 
 		const form = new FormData();
 		form.append('secretKey', secretKey);
@@ -272,7 +272,7 @@ export const APICallSupplyOrderList = async mt_idx => {
 
 export const APICallSupplyOrderDeatil = async (mt_idx, od_idx) => {
 	try {
-		console.log('구매자 공급 상세 리스트');
+		console.log('구매자 추천업체 상세 리스트');
 
 		const form = new FormData();
 		form.append('secretKey', secretKey);
@@ -288,7 +288,7 @@ export const APICallSupplyOrderDeatil = async (mt_idx, od_idx) => {
 
 export const APICallSellerSupplyOrderDeatil = async (mt_idx, od_idx) => {
 	try {
-		console.log('판매자 공급 상세 리스트');
+		console.log('판매자 추천업체 상세 리스트');
 
 		const form = new FormData();
 		form.append('secretKey', secretKey);
@@ -304,7 +304,7 @@ export const APICallSellerSupplyOrderDeatil = async (mt_idx, od_idx) => {
 
 export const APICallZzimSupplyOrderDeatil = async (mt_idx, od_idx) => {
 	try {
-		console.log('찜 공급 상세 리스트', od_idx, mt_idx);
+		console.log('관심 추천업체 상세 리스트', od_idx, mt_idx);
 
 		const form = new FormData();
 		form.append('secretKey', secretKey);
@@ -436,7 +436,7 @@ export const APIEnrollEvent = async (
 		form.append('et_content', info);
 		form.append('et_thumbnail', mainImg);
 		subImg.forEach((item, index) => form.append('et_image[]', item));
-		console.log('행사 등록 전송 Form', form);
+		console.log('공지 등록 전송 Form', form);
 		const res = await API.post('seller_event_add.php', form);
 		console.log(res.data);
 		return res.data;
@@ -476,7 +476,7 @@ export const APIModifyEvent = async (
 		subImg.forEach((item, index) =>
 			form.append('et_image[]', item.name === undefined ? item.uri : item),
 		);
-		console.log('행사 수정 전송 Form', form);
+		console.log('공지 수정 전송 Form', form);
 		const res = await API.post('seller_event_edit.php', form);
 		console.log(res);
 		console.log(res.data);
@@ -578,7 +578,7 @@ export const APIEnrollTodayIn = async (
 		form.append('pt_chatting_chk', chatting_chk ? 'Y' : '');
 		form.append('pt_thumbnail', mainImg);
 		subImg.forEach((item, index) => form.append('pt_image[]', item));
-		console.log('오늘입고 등록', form);
+		console.log('오늘만 등록', form);
 		const res = await API.post('seller_today_add.php', form);
 		console.log(res);
 		return res.data;
@@ -622,7 +622,7 @@ export const APIModifyTodayIn = async (
 		subImg.forEach((item, index) =>
 			form.append('pt_image[]', item.name === undefined ? item.uri : item),
 		);
-		console.log('오늘입고 수정', form);
+		console.log('오늘만 수정', form);
 		const res = await API.post('seller_today_edit.php', form);
 		console.log(res);
 		return res.data;

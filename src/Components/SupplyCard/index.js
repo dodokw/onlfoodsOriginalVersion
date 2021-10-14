@@ -283,7 +283,7 @@ const SupplyCard = ({item, setShowDetailId, state, getData, user, zzim}) => {
 							{item.mt_item ? item.mt_item : item.slt_company_item}
 						</CompanyContentText>
 						<CompanyPeriodText>
-							재고 현황 갱신일{' '}
+							품목 현황 갱신일{' '}
 							{item.qty_update.split(' ')[0] === '0000-00-00'
 								? '-'
 								: item.qty_update.split(' ')[0]}

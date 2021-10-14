@@ -60,7 +60,7 @@ const RegularCompany = ({navigation}) => {
 	return (
 		<Container>
 			<Header
-				title="단골업체"
+				title="관심업체"
 				headerLeft={<BackButton onPress={() => navigation.goBack()} />}
 				headerRight={
 					<SwitchingButton onToggle={state} disabled={true} border={true} />
@@ -87,7 +87,7 @@ const RegularCompany = ({navigation}) => {
 					bounces={false}
 					showsVerticalScrollIndicator={false}
 					contentContainerStyle={{paddingHorizontal: 20, paddingBottom: 100}}
-					ListEmptyComponent={<EmptyLabel>단골 업체가 없습니다.</EmptyLabel>}
+					ListEmptyComponent={<EmptyLabel>관심 업체가 없습니다.</EmptyLabel>}
 				/>
 			)}
 		</Container>

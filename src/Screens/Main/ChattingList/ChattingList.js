@@ -124,9 +124,9 @@ const EmptyLabel = styled.Text`
 const chattingTypeData = {
    0: [
       {key: 0, label: '전체', value: '전체'},
-      {key: 1, label: '행사', value: '행사'},
-      {key: 2, label: '오늘입고', value: '오늘입고'},
-      {key: 3, label: '공급업체', value: '공급업체'},
+      {key: 1, label: '공지', value: '행사'},
+      {key: 2, label: '오늘만', value: '오늘입고'},
+      {key: 3, label: '추천업체', value: '공급업체'},
    ],
    1: [
       {key: 0, label: '전체', value: '전체'},

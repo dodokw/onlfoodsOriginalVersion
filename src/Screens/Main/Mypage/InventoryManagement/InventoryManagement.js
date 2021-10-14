@@ -67,7 +67,7 @@ const InventoryManagement = ({navigation}) => {
 	const dispatch = useDispatch();
 	const {state} = useSelector(state => state.loginReducer);
 	const [date, setDate] = useState('');
-	const [tabState, setTabState] = useState(0);
+	const [tabState, setTabState] = useState(1);
 	const [showDateTimePicker, setShowDateTimePicker] = useState(false);
 
 	const onConfirm = date => {
@@ -87,7 +87,7 @@ const InventoryManagement = ({navigation}) => {
 	return (
 		<Container>
 			<Header
-				title="재고관리"
+				title="품목관리"
 				headerLeft={<BackButton onPress={() => navigation.goBack()} />}
 				headerRight={
 					<SwitchingButton onToggle={state} disabled={true} border={true} />
@@ -113,10 +113,10 @@ const InventoryManagement = ({navigation}) => {
 			<TabContainer>
 				<TabWrap>
 					<TabBox selected={tabState === 0} onPress={() => setTabState(0)}>
-						<TabLabel selected={tabState === 0}>오늘입고</TabLabel>
+						<TabLabel selected={tabState === 0}>오늘만</TabLabel>
 					</TabBox>
 					<TabBox selected={tabState === 1} onPress={() => setTabState(1)}>
-						<TabLabel selected={tabState === 1}>재고현황</TabLabel>
+						<TabLabel selected={tabState === 1}>품목현황</TabLabel>
 					</TabBox>
 					<TabBox selected={tabState === 2} onPress={() => setTabState(2)}>
 						<TabLabel selected={tabState === 2}>출고</TabLabel>

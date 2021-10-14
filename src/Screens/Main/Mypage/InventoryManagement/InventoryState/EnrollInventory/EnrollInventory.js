@@ -339,7 +339,7 @@ function EnrollInventory({navigation, route}) {
 	return (
 		<Container>
 			<Header
-				title={'재고등록'}
+				title={'품목등록'}
 				headerLeft={<BackButton onPress={() => navigation.goBack()} />}
 				headerRight={
 					<SwitchingButton onToggle={state} disabled={true} border={true} />
@@ -411,11 +411,11 @@ function EnrollInventory({navigation, route}) {
 							useNativeAndroidPickerStyle={false}
 						/>
 					</SelectContainer>
-					<TitleLabel>재고수량</TitleLabel>
+					<TitleLabel>품목수량</TitleLabel>
 					<InputBox>
 						<TextInput
 							name="count"
-							placeholder="재고수량"
+							placeholder="품목수량"
 							placeholderColor={ColorLineGrey}
 							value={count}
 							onChangeText={text => setCount(text.replace(/[^0-9]/g, ''))}

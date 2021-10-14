@@ -434,7 +434,7 @@ const EnrollTodayIn = ({navigation, route}) => {
 				subImg,
 			);
 			if (res.result === 'true') {
-				Alert.alert('알림', '오늘 입고 상품이 등록되었습니다.', [
+				Alert.alert('알림', '오늘만 상품이 등록되었습니다.', [
 					{text: '확인', onPress: () => navigation.goBack()},
 				]);
 			} else {
@@ -503,7 +503,7 @@ const EnrollTodayIn = ({navigation, route}) => {
 			);
 			if (res.result === 'true') {
 				console.log(res);
-				Alert.alert('알림', '오늘 입고 상품이 수정되었습니다.', [
+				Alert.alert('알림', '오늘만 상품이 수정되었습니다.', [
 					{text: '확인', onPress: () => navigation.goBack()},
 				]);
 			} else {
@@ -686,11 +686,11 @@ const EnrollTodayIn = ({navigation, route}) => {
 							useNativeAndroidPickerStyle={false}
 						/>
 					</SelectContainer>
-					<TitleLabel>재고수량</TitleLabel>
+					<TitleLabel>품목수량</TitleLabel>
 					<InputBox>
 						<TextInput
 							name="count"
-							placeholder="재고수량"
+							placeholder="품목수량"
 							placeholderColor={ColorLineGrey}
 							value={count}
 							onChangeText={text => setCount(text.replace(/[^0-9]/g, ''))}

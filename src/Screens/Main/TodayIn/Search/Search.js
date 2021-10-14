@@ -132,11 +132,11 @@ const Search = ({navigation, route}) => {
 			);
 			if (res.result === 'true') {
 				const decode = jwtDecode(res.jwt);
-				console.log('오늘입고', decode.data);
+				console.log('오늘만', decode.data);
 				if (num === 0) setTodayInData(decode.data);
 				else {
 					if (decode.data.length === 0)
-						return Alert.alert('알림', '검색된 상품이 없습니다.', [
+						return Alert.alert('알림', '더보기 상품이 없습니다.', [
 							{text: '확인'},
 						]);
 					setTodayInData([...todayInData, ...decode.data]);
@@ -145,7 +145,7 @@ const Search = ({navigation, route}) => {
 				if (num === 0) setTodayInData([]);
 			}
 		} catch (err) {
-			console.error('오늘입고', err);
+			console.error('오늘만', err);
 		}
 	};
 
@@ -166,7 +166,7 @@ const Search = ({navigation, route}) => {
 				if (num === 0) setSellerData(decode.data);
 				else {
 					if (decode.data.length === 0)
-						return Alert.alert('알림', '검색된 업체가 없습니다.', [
+						return Alert.alert('알림', '더보기 업체가 없습니다.', [
 							{text: '확인'},
 						]);
 					setSellerData([...sellerData, ...decode.data]);
@@ -231,7 +231,7 @@ const Search = ({navigation, route}) => {
 				<SearchPlzLabel>검색어를 입력해주세요.</SearchPlzLabel>
 			) : (
 				<ScrollView contentContainerStyle={{marginHorizontal: 10}}>
-					<Title>오늘 입고</Title>
+					<Title>오늘만</Title>
 					{todayInData.length > 0 ? (
 						<>
 							{todayInData.map(item => (
@@ -260,7 +260,7 @@ const Search = ({navigation, route}) => {
 					) : (
 						<SearchPlzLabel>검색 내용이 없습니다.</SearchPlzLabel>
 					)}
-					<Title>공급 업체</Title>
+					<Title>추천업체</Title>
 					{sellerData === undefined || sellerData.length === 0 ? (
 						<SearchPlzLabel>검색 내용이 없습니다.</SearchPlzLabel>
 					) : (

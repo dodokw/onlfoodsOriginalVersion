@@ -85,7 +85,13 @@ const MyGradeWrap = styled.View`
 `;
 const MyGradeLabel = styled.Text`
 	font-family: ${FONTNanumGothicRegular};
-	color: #7b7b7b;
+	color: #444;
+`;
+
+const AdminWeb = styled.View``;
+const AdminWebLabel = styled.Text`
+	font-size:11px;
+	color:#777;
 `;
 
 const RedLabel = styled.Text`
@@ -154,7 +160,7 @@ function Mypage({navigation}) {
 	
 	const changeState = () => {
 		if (seller === null) {
-			Alert.alert('알림', '판매자 회원이 아닙니다.', [{text: '확인', onPress:()=>setShowSub(true)}]);
+			Alert.alert('알림', ' 입점 구독 후 이용 가능합니다.', [{text: '확인', onPress:()=>setShowSub(true)}]);
 		} else {
 			if (state) dispatch(saleroff());
 			else dispatch(saleron());
@@ -256,7 +262,7 @@ function Mypage({navigation}) {
 						</MyNameText>
 						<MyGradeWrap>
 							<MyGradeLabel>
-								판매자 구독{' '}
+								입점업체 구독{' '}
 								<RedLabel>
 									{user.mt_level == 5 ? '이용중' : '미이용중'}
 								</RedLabel>
@@ -272,6 +278,9 @@ function Mypage({navigation}) {
 								</SubscribeButton>
 							)}
 						</MyGradeWrap>
+						{user.mt_level ==5 &&
+						<AdminWeb><AdminWebLabel>관리자 웹페이지 (onlfoods.com/seller)</AdminWebLabel></AdminWeb>
+					}
 					</MyInfoWrap>
 					<MyInfoSettingButton
 						onPress={() =>

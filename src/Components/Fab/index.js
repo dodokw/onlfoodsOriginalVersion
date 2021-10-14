@@ -77,7 +77,7 @@ const Fab = ({isOpen, setIsOpen, onPress}) => {
 			{isOpen && (
 				<>
 					<MiniBox1>
-						<MiniLabel>재고관리</MiniLabel>
+						<MiniLabel>품목관리</MiniLabel>
 						<MiniButton
 							onPress={() => {
 								setIsOpen(false);
@@ -90,7 +90,7 @@ const Fab = ({isOpen, setIsOpen, onPress}) => {
 						</MiniButton>
 					</MiniBox1>
 					<MiniBox2>
-						<MiniLabel>행사관리</MiniLabel>
+						<MiniLabel>공지관리</MiniLabel>
 						<MiniButton
 							onPress={() => {
 								setIsOpen(false);

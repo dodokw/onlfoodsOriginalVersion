@@ -113,7 +113,7 @@ function StockItemCard({
 				{item.pt_type === '오늘입고' && (
 					<InventoryNewWrap>
 						<SvgXml xml={ic_new} />
-						<InventoryNewLabel>오늘입고</InventoryNewLabel>
+						<InventoryNewLabel>오늘만</InventoryNewLabel>
 					</InventoryNewWrap>
 				)}
 				<ItemText
@@ -123,6 +123,8 @@ function StockItemCard({
 					{item.pt_title}
 				</ItemText>
 			</ItemBox>
+
+			
 			<ItemBox flex={1}>
 				{input ? (
 					<ItemInputText

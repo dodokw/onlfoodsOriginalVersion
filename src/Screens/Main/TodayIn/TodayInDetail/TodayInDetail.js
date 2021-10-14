@@ -398,7 +398,7 @@ const TodayInDetail = ({navigation, route}) => {
 			const res = await APICallTodayInDetail(lat, lng, pt_idx, mt_idx);
 			if (res.result === 'true') {
 				const decode = jwtDecode(res.jwt);
-				console.log('오늘입고 상세', decode.data);
+				console.log('오늘만 상세', decode.data);
 				zzim.current = parseInt(decode.data.zzim);
 				if (decode.data.slt_zzim_check === 'on') {
 					setZzimState(true);
@@ -456,11 +456,11 @@ const TodayInDetail = ({navigation, route}) => {
 			const res = await APICallLikeCompany(slt_idx, user.mt_idx);
 			if (res.result === 'true') {
 				if (res.data.wst_status === 'Y') {
-					console.log('단골됨!');
+					console.log('관심업체 등록!');
 					setZzimState(true);
 					zzim.current += 1;
 				} else {
-					console.log('단골 해제!');
+					console.log('관심업체 해제!');
 					setZzimState(false);
 					zzim.current -= 1;
 				}
@@ -517,7 +517,7 @@ const TodayInDetail = ({navigation, route}) => {
 	return (
 		<Container>
 			<Header
-				title="오늘 입고"
+				title="오늘만"
 				headerLeft={
 					<BackButton
 						onPress={() => {
@@ -701,7 +701,7 @@ const TodayInDetail = ({navigation, route}) => {
 			<MapModal isShow={showMap} setShow={setShowMap} idx={slt_idx} />
 			<InputNumModal
 				visible={isOrder}
-				title="오늘입고 주문"
+				title="오늘만 주문"
 				subText="주문하실 수량을 입력해주세요."
 				confirmLabel="주문"
 				confirmAction={goChatting}

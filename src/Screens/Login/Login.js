@@ -16,7 +16,7 @@ import {
 	getProfile as getKakaoProfile,
 } from '@react-native-seoul/kakao-login';
 import jwtDecode from 'jwt-decode';
-import Logo from '~/Assets/Images/Login_logo.svg';
+import Logo from '~/Assets/Images/Login_logo1.svg';
 import LoadingModal from '~/Components/LoadingModal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {TouchableWithoutFeedback} from 'react-native';

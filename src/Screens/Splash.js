@@ -126,12 +126,12 @@ const Splash = ({isLoading, setLoading}) => {
 						<G id="스플레시로고" transform="translate(-121 -273.399)">
 							<Text
 								id="식자재_재고정보공유_플랫폼"
-								data-name="식자재 재고정보공유 플랫폼"
+								data-name="식품/식자재 거래관리 플랫폼"
 								transform="translate(121 418.601)"
 								fill="#fff"
 								fontSize="15">
 								<TSpan x="0" y="0">
-									식자재 재고정보공유 플랫폼
+								식품/식자재 거래관리 플랫폼
 								</TSpan>
 							</Text>
 							<G id="로고" transform="translate(17.068 -66.892)">

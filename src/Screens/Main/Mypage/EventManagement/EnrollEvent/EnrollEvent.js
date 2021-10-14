@@ -390,7 +390,7 @@ const EnrollEvent = ({navigation, route}) => {
 			);
 		}
 		if (startDate === '시작일' || endDate === '종료일') {
-			return Alert.alert('알림', '행사 날짜를 입력해주세요.', [{text: '확인'}]);
+			return Alert.alert('알림', '공지 날짜를 입력해주세요.', [{text: '확인'}]);
 		}
 		if (dayjs(startDate) > dayjs(endDate)) {
 			return Alert.alert('알림', '시작일이 종료일보다 미래입니다.', [
@@ -411,7 +411,7 @@ const EnrollEvent = ({navigation, route}) => {
 				subImg,
 			);
 			if (res.result === 'true') {
-				Alert.alert('알림', '오늘의 행사가 등록되었습니다.', [
+				Alert.alert('알림', '공지가 등록되었습니다.', [
 					{text: '확인', onPress: () => navigation.goBack()},
 				]);
 			} else {
@@ -468,7 +468,7 @@ const EnrollEvent = ({navigation, route}) => {
 				subImg,
 			);
 			if (res.result === 'true') {
-				Alert.alert('알림', '오늘의 행사 상품이 수정되었습니다.', [
+				Alert.alert('알림', '공지가 수정되었습니다.', [
 					{text: '확인', onPress: () => navigation.goBack()},
 				]);
 			} else {
@@ -556,17 +556,17 @@ const EnrollEvent = ({navigation, route}) => {
 					<Dive />
 				</Section>
 				<Section style={{paddingHorizontal: 20}}>
-					<TitleLabel>행사명</TitleLabel>
+					<TitleLabel>공지명</TitleLabel>
 					<InputBox>
 						<TextInput
 							name="title"
-							placeholder="행사명"
+							placeholder="공지명"
 							placeholderColor={ColorLineGrey}
 							value={title}
 							onChangeText={text => setTitle(text)}
 						/>
 					</InputBox>
-					<TitleLabel>행사유형</TitleLabel>
+					<TitleLabel>공지유형</TitleLabel>
 					<ButtonWrap>
 						<SelectedButton
 							selected={type === '1'}
@@ -575,7 +575,7 @@ const EnrollEvent = ({navigation, route}) => {
 							<SelectedButtonLabel
 								selected={type === '1'}
 								style={{fontSize: 13}}>
-								전단지
+								일반
 							</SelectedButtonLabel>
 						</SelectedButton>
 						<SelectedButton
@@ -585,7 +585,7 @@ const EnrollEvent = ({navigation, route}) => {
 							<SelectedButtonLabel
 								selected={type === '2'}
 								style={{fontSize: 13}}>
-								유통기한 임박
+								행사
 							</SelectedButtonLabel>
 						</SelectedButton>
 						<SelectedButton
@@ -595,11 +595,11 @@ const EnrollEvent = ({navigation, route}) => {
 							<SelectedButtonLabel
 								selected={type === '3'}
 								style={{fontSize: 13}}>
-								프로모션
+								시세변동
 							</SelectedButtonLabel>
 						</SelectedButton>
 					</ButtonWrap>
-					<TitleLabel>행사기간</TitleLabel>
+					<TitleLabel>공지기간</TitleLabel>
 					<PeriodWrap>
 						<DateBox onPress={() => setShowDatePicker('start')}>
 							<DateLabel>{startDate}</DateLabel>
@@ -618,7 +618,7 @@ const EnrollEvent = ({navigation, route}) => {
 							<Icon name="calendar" size={20} />
 						</DateBox>
 					</PeriodWrap>
-					<TitleLabel>행사위치</TitleLabel>
+					{/* <TitleLabel>행사위치</TitleLabel>
 
 					<RowWrap>
 						<InputBox>
@@ -639,10 +639,10 @@ const EnrollEvent = ({navigation, route}) => {
 							value={address.sangse}
 							onChangeText={text => setAddress({...address, sangse: text})}
 						/>
-					</InputBox>
-					<TitleLabel>행사정보</TitleLabel>
+					</InputBox> */}
+					<TitleLabel>공지정보</TitleLabel>
 					<MultiTextInput
-						placeholder="행사정보를 입력해주세요."
+						placeholder="공지정보를 입력해주세요."
 						placeholderColor={ColorLineGrey}
 						multiline={true}
 						value={info}

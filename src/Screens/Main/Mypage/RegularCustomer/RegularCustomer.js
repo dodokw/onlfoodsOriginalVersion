@@ -77,7 +77,7 @@ const RegularCustomer = ({navigation}) => {
 	return (
 		<Container>
 			<Header
-				title="단골관리"
+				title="관심업체관리"
 				headerLeft={<BackButton onPress={() => navigation.goBack()} />}
 				headerRight={
 					<SwitchingButton onToggle={state} disabled={true} border={true} />
@@ -102,7 +102,7 @@ const RegularCustomer = ({navigation}) => {
 					bounces={false}
 					showsVerticalScrollIndicator={false}
 					contentContainerStyle={{paddingBottom: 100}}
-					ListEmptyComponent={<EmptyLabel>단골 고객이 없습니다.</EmptyLabel>}
+					ListEmptyComponent={<EmptyLabel>관심 고객이 없습니다.</EmptyLabel>}
 				/>
 			)}
 		</Container>

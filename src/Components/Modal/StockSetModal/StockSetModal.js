@@ -157,7 +157,7 @@ const StockSetModal = ({visible, setVisible, stockList, getData}) => {
 			const res = await APIUpdateStockList(user.mt_idx, data);
 			if (res.result === 'true') {
 				console.log(res);
-				Alert.alert('알림', '재고 조정이 완료되었습니다.', [
+				Alert.alert('알림', '품목 조정이 완료되었습니다.', [
 					{
 						text: '확인',
 						onPress: () => {
@@ -193,7 +193,7 @@ const StockSetModal = ({visible, setVisible, stockList, getData}) => {
 						<Wrap style={{flex: 1}}>
 							<BackButton onPress={() => setVisible(false)} />
 						</Wrap>
-						<HeaderTitle>재고 조정</HeaderTitle>
+						<HeaderTitle>품목 조정</HeaderTitle>
 						<Wrap style={{flex: 1}}></Wrap>
 					</Wrap>
 					<ContentTitleWrap>
@@ -307,7 +307,7 @@ const StockSetModal = ({visible, setVisible, stockList, getData}) => {
 						</Wrap>
 						<Wrap style={{margin: 10}}>
 							<LongButton
-								text="재고 조정"
+								text="품목 조정"
 								color={ColorBlue}
 								radius={10}
 								onPress={onUpdate}

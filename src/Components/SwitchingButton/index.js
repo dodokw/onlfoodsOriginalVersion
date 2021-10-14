@@ -33,7 +33,7 @@ const SwitchingButton = ({onToggle, onPress, disabled}) => {
 		<Container onToggle={onToggle} onPress={onPress} disabled={disabled}>
 			{onToggle === false && (
 				<Title onToggle={onToggle} style={{margin: disabled && 0}}>
-					구매자
+					구매
 				</Title>
 			)}
 			{!disabled && (
@@ -41,7 +41,7 @@ const SwitchingButton = ({onToggle, onPress, disabled}) => {
 					<SvgXml xml={ic_refresh} width={15} height={15} />
 				</Circle>
 			)}
-			{onToggle === true && <Title onToggle={onToggle}>판매자</Title>}
+			{onToggle === true && <Title onToggle={onToggle}>판매</Title>}
 		</Container>
 	);
 };

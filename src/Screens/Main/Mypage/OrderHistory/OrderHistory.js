@@ -241,7 +241,7 @@ const OrderHistory = ({navigation, route}) => {
 						selected={tabState === 0}
 						onPress={() => setTabState(0)}>
 						<TabLabel state={state} selected={tabState === 0}>
-							오늘입고
+							오늘만
 						</TabLabel>
 					</TabBox>
 					<TabBox
@@ -251,7 +251,7 @@ const OrderHistory = ({navigation, route}) => {
 							setTabState(1), setDetailData(undefined), setShowDetailId('');
 						}}>
 						<TabLabel state={state} selected={tabState === 1}>
-							공급업체
+							추천업체
 						</TabLabel>
 					</TabBox>
 				</TabWrap>
@@ -286,7 +286,7 @@ const OrderHistory = ({navigation, route}) => {
 						ListEmptyComponent={
 							<ListWarningBox>
 								<ListWarningLabel>
-									오늘입고 주문내역이 없습니다.
+									오늘만 주문내역이 없습니다.
 								</ListWarningLabel>
 							</ListWarningBox>
 						}
@@ -321,7 +321,7 @@ const OrderHistory = ({navigation, route}) => {
 						ListEmptyComponent={
 							<ListWarningBox>
 								<ListWarningLabel>
-									공급업체 주문내역이 없습니다.
+									추천업체 주문내역이 없습니다.
 								</ListWarningLabel>
 							</ListWarningBox>
 						}

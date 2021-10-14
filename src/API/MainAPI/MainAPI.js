@@ -120,7 +120,7 @@ export const APICallLikeCompany = async (company, user) => {
 	}
 };
 
-//오늘입고 리스트
+//오늘만 리스트
 export const APICallTodayInList = async (
 	user,
 	lat,
@@ -148,7 +148,7 @@ export const APICallTodayInList = async (
 	}
 };
 
-//오늘입고 상세
+//오늘만 상세
 export const APICallTodayInDetail = async (lat, lng, pt_idx, mt_idx) => {
 	try {
 		const form = new FormData();

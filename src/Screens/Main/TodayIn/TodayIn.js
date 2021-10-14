@@ -417,7 +417,7 @@ const TodayIn = ({navigation}) => {
 		setFooterData(banner.setup);
 	};
 
-	//오늘입고 리스트 불러오기
+	//오늘만 리스트 불러오기
 	const getList = async () => {
 		PageRef.current = 1;
 		try {
@@ -437,7 +437,7 @@ const TodayIn = ({navigation}) => {
 				);
 				if (res.result === 'true') {
 					const decode = jwtDecode(res.jwt);
-					console.log('오늘입고 data', decode.data);
+					console.log('오늘만 data', decode.data);
 					setData(decode.data);
 				} else {
 					console.log(res);
@@ -674,7 +674,7 @@ const TodayIn = ({navigation}) => {
 							onEndReached={addList}
 							ListEmptyComponent={
 								!dataLoading && (
-									<ListWarningLabel>오늘입고 상품이 없습니다.</ListWarningLabel>
+									<ListWarningLabel>오늘만 상품이 없습니다.</ListWarningLabel>
 								)
 							}
 							ListFooterComponent={footerData && <Footer item={footerData} />}

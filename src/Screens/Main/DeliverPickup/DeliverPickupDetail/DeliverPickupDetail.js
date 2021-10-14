@@ -387,7 +387,7 @@ const DeliverPickupDetail = ({navigation, route}) => {
 	const[datas,setDatas] = useState([]);
 	const [keyword, setKeyword] = useState('');
 	const [items, setItems] = useState([]); //고유의 상품들
-	const [list, setList] = useState([]); //재고리스트에 담긴 상품들
+	const [list, setList] = useState([]); //품목리스트에 담긴 상품들
 	const [selectedItem, setSelectedItem] = useState([]); //주문목록에 담긴 상품들
 	const [deliverType, setDeliverType] = useState(1);
 	const [zzimState, setZzimState] = useState(false);
@@ -471,11 +471,11 @@ const DeliverPickupDetail = ({navigation, route}) => {
 			const res = await APICallLikeCompany(seller_idx, user.mt_idx);
 			if (res.result === 'true') {
 				if (res.data.wst_status === 'Y') {
-					console.log('단골됨!');
+					console.log('관심업체 등록!');
 					zzim.current += 1;
 					setZzimState(true);
 				} else {
-					console.log('단골 해제!');
+					console.log('관심업체 해제!');
 					zzim.current -= 1;
 					setZzimState(false);
 				}
@@ -697,9 +697,9 @@ const DeliverPickupDetail = ({navigation, route}) => {
 							paddingHorizontal: 20,
 							paddingVertical: 5,
 						}}>
-						<StockTitleLabel>취급가능 재고리스트</StockTitleLabel>
+						<StockTitleLabel>취급가능 품목리스트</StockTitleLabel>
 						<StockRefeshLabel>
-							재고 갱신일{' '}
+							품목 갱신일{' '}
 							{data.slt_qty_udate.split(' ')[0] === '0000-00-00'
 								? '-'
 								: data.slt_qty_udate.split(' ')[0]}

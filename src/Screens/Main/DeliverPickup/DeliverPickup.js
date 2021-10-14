@@ -512,7 +512,7 @@ const DeliverPickup = ({navigation}) => {
 				setIsShow={setShowDistance}
 				distance={distance}
 			/>
-			<Header title="공급업체" absolute />
+			<Header title="추천업체" absolute />
 			<MainHeader
 				navigation={navigation}
 				setLat={setLat}

@@ -25,7 +25,7 @@ const Container = styled.View`
 const Box = styled.SafeAreaView`
 	border-radius: 20px;
 	border-color: ${ColorLineGrey};
-	justify-content: center;
+	// justify-content: center;
 	padding: 20px;
 `;
 
@@ -52,15 +52,17 @@ const LogoSubLabel = styled.Text`
 
 const SubInfoBox = styled.View`
 	margin: 10px 50px;
-	align-items: center;
+	// align-items: center;
+	width:100%
 `;
 
 const SubInfoLabel = styled.Text`
-	width: ${Dimensions.get('screen').width / 2}px;
+	// width: ${Dimensions.get('screen').width / 2}px;
 	padding-left: 10px;
 	font-weight: bold;
 	color: #ffffff;
 	font-size: 16px;
+	
 `;
 
 const RedLabel = styled.Text`
@@ -119,6 +121,7 @@ function ServiceInfo({visible, setVisible, checkSubscribe}) {
 		}
 	}, [visible]);
 
+	
 	return (
 		<Modal visible={visible} setVisible={setVisible} transparent={true}>
 			<Container>
@@ -126,21 +129,20 @@ function ServiceInfo({visible, setVisible, checkSubscribe}) {
 					<LogoBox>
 						<SvgXml xml={Logo} />
 					</LogoBox>
-					<LogoLabel>판매자 구독</LogoLabel>
+					<LogoLabel>입점 구독</LogoLabel>
 					<LogoSubLabel>구독하시면 아래와 같은 혜택이 제공됩니다.</LogoSubLabel>
 					<SubInfoBox>
 						<SubInfoLabel>
-							- <RedLabel>오늘입고</RedLabel> 상품 등록
+							- <RedLabel>오늘만</RedLabel> 상품 등록
 						</SubInfoLabel>
 						<SubInfoLabel>
-							- <RedLabel>오늘의 행사</RedLabel> 글 등록
+							- <RedLabel>추천업체/취급품목</RedLabel> 노출 및 <RedLabel>재고관리</RedLabel>
 						</SubInfoLabel>
 						<SubInfoLabel>
-							- <RedLabel>업체</RedLabel> 노출 및 <RedLabel>재고</RedLabel> 현황
-							노출
+							- <RedLabel>업체 공지관리</RedLabel> 서비스 제공
 						</SubInfoLabel>
 						<SubInfoLabel>
-							- 재고 관리 <RedLabel>웹페이지</RedLabel> 제공
+							- 별도의 <RedLabel>관리 웹페이지</RedLabel> 제공
 						</SubInfoLabel>
 					</SubInfoBox>
 					<ButtonBox>

@@ -293,10 +293,10 @@ const InventoryState = ({navigation, date}) => {
 			</ContentWrap>
 			<ContentOptionWrap>
 				<OptionButton onPress={() => navigation.navigate('EnrollInventory')}>
-					<OptionButtonLabel>재고등록</OptionButtonLabel>
+					<OptionButtonLabel>품목등록</OptionButtonLabel>
 				</OptionButton>
 				<OptionButton onPress={goEdit}>
-					<OptionButtonLabel>재고조정</OptionButtonLabel>
+					<OptionButtonLabel>품목조정</OptionButtonLabel>
 				</OptionButton>
 				<OptionButton
 					onPress={() =>
@@ -305,7 +305,7 @@ const InventoryState = ({navigation, date}) => {
 							{text: '취소'},
 						])
 					}>
-					<OptionButtonLabel>재고삭제</OptionButtonLabel>
+					<OptionButtonLabel>품목삭제</OptionButtonLabel>
 				</OptionButton>
 			</ContentOptionWrap>
 			<StockSetModal
