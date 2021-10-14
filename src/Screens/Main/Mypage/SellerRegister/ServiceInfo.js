@@ -14,6 +14,7 @@ import RNIap, {
 	Subscription,
 	PurchaseError,
 } from 'react-native-iap';
+import { useNavigation } from '@react-navigation/core';
 
 const Container = styled.View`
 	flex: 1;
@@ -86,10 +87,25 @@ const ButtonLabel = styled.Text`
 	color: #ffffff;
 	text-align: center;
 `;
-
 const itemSubs = Platform.select({default: ['foodinus.seller']});
 
+const SellerTermWrap = styled.TouchableOpacity`
+	justify-content:center;
+	align-items:center;
+`;
+const SellerTermLabel = styled.Text`
+	color:#fff;
+	border-width:1px;
+	padding:5px 10px;
+	border-color:#fff;
+`;
+
 function ServiceInfo({visible, setVisible, checkSubscribe}) {
+	const navigation = useNavigation();
+	const goTerms = async type => {
+		setVisible(false);
+		return navigation.navigate('Terms', {type});
+	};
 	const [subscription, setSubscription] = useState({
 		title: '판매자 구독',
 		localizedPrice: '',
@@ -145,6 +161,7 @@ function ServiceInfo({visible, setVisible, checkSubscribe}) {
 							- 별도의 <RedLabel>관리 웹페이지</RedLabel> 제공
 						</SubInfoLabel>
 					</SubInfoBox>
+					<SellerTermWrap onPress={()=>goTerms(5)}><SellerTermLabel>입점회원 이용약관</SellerTermLabel></SellerTermWrap>
 					<ButtonBox>
 						<Button
 							style={{backgroundColor: ColorRed}}

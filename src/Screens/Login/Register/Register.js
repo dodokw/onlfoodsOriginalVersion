@@ -552,7 +552,7 @@ const Register = ({navigation}) => {
 							}>
 							<SvgXml xml={data.checkMarketing ? checkOn : checkOff} />
 							<ContractSubTitle>
-								<GreyLabel>(선택)</GreyLabel>마케팅 정보 제공
+								<RedLabel>(필수)</RedLabel>위치기반서비스
 							</ContractSubTitle>
 						</ContranctCheckButton>
 
@@ -560,7 +560,22 @@ const Register = ({navigation}) => {
 							<MoreDetailLabel>자세히보기</MoreDetailLabel>
 						</MoreDetailButton>
 					</ContractWrap>
- 
+					<ContractWrap>
+						<ContranctCheckButton
+							onPress={() =>
+								setData({...data, checkMarketing: !data.checkMarketing})
+							}>
+							<SvgXml xml={data.checkMarketing ? checkOn : checkOff} />
+							<ContractSubTitle>
+								<GreyLabel>(선택)</GreyLabel>마케팅 정보 제공
+							</ContractSubTitle>
+						</ContranctCheckButton>
+
+						<MoreDetailButton onPress={() => goTerms(4)}>
+							<MoreDetailLabel>자세히보기</MoreDetailLabel>
+						</MoreDetailButton>
+					</ContractWrap>
+							
 					<RegiButton onPress={goRegister}>
 						<RegiLabel>다음</RegiLabel>
 					</RegiButton>

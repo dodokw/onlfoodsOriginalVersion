@@ -105,7 +105,7 @@ export const APICallSellerSearch = async (
 	}
 };
 
-//단골등록
+//관심등록
 export const APICallLikeCompany = async (company, user) => {
 	try {
 		const form = new FormData();
@@ -164,7 +164,7 @@ export const APICallTodayInDetail = async (lat, lng, pt_idx, mt_idx) => {
 	}
 };
 
-//오늘의 행사 리스트
+//오늘의 공지 리스트
 export const APICallTodayEvnetList = async (
 	lat,
 	lng,

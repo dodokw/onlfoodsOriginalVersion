@@ -15,6 +15,7 @@ import EnrollQuestion from '~/Screens/Main/Mypage/CustomService/EnrollQuestion.j
 import QuestionDetail from '~/Screens/Main/Mypage/CustomService/QuestionDetail';
 import OrderHistory from '~/Screens/Main/Mypage/OrderHistory/OrderHistory';
 import LocationSetting from '~/Screens/Main/TodayIn/LocationSetting/LocationSetting';
+import Terms from '~/Screens/Login/Terms/Terms';
 import {useSelector} from 'react-redux';
 import InventoryManagement from '~/Screens/Main/Mypage/InventoryManagement/InventoryManagement';
 
@@ -104,6 +105,11 @@ const TodayInNavigation = () => {
 				component={InventoryManagement}
 				options={{headerShown: false}}
 			/>
+			<Stack.Screen
+					name="Terms"
+					component={Terms}
+					options={{headerShown: false}}
+				/>
 		</Stack.Navigator>
 	);
 };
