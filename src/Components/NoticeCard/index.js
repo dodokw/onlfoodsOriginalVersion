@@ -9,6 +9,7 @@ import {ColorLineGrey, ColorRed} from '~/Assets/Style/Colors';
 import {Alert} from 'react-native';
 import {APIDelTodayEvent} from '~/API/MyPageAPI/MyPageAPI';
 import dataReducer from '~/Modules/Reducers/dataReducer';
+import noImage from '~/Assets/Images/noImage.png'
 
 const Container = styled.TouchableOpacity`
 	background-color:#ffffff;
@@ -166,7 +167,9 @@ const NoticeCard = ({
 		<Container onPress={onPress}>
 			<Wrap>
 				<EventImageBox>
+					{item.et_thumbnail !== null ?
 					<EventImage source={{uri: 'https://onlfoods.com/images/event/'+item.et_thumbnail}} resizeMode="cover" />
+					: <EventImage source={require('~/Assets/Images/noImage.png')} resizeMode="cover" />}
 					<NoticeType typeNum={item.et_type}>
 						<NoticeTypeLabel>
 							{NoticeTypeName(item)}

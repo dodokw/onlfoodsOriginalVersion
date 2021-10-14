@@ -358,6 +358,8 @@ const TodayEventDetail = ({navigation, route}) => {
 		GetDetail();
 	}, []);
 
+	console.log(imageArr[imageIndex]);
+
 	return (
 		<Container>
 			<Header
@@ -423,7 +425,7 @@ const TodayEventDetail = ({navigation, route}) => {
 				</CompanyContainer>
 				{showImage && (
 					<ImageContainer>
-						<MainImage source={{uri: imageArr[imageIndex]}} />
+						<MainImage source={ imageArr[imageIndex] !== undefined ?{uri: imageArr[imageIndex]} : require('~/Assets/Images/noImage.png')} />
 						<ImageSelector>
 							{imageArr.map((item, index) => (
 								<TouchableOpacity

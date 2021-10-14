@@ -8,6 +8,7 @@ import DeliverPickupDetail from '~/Screens/Main/DeliverPickup/DeliverPickupDetai
 import MyProfileEdit from '~/Screens/Main/Mypage/MyProfileEdit/MyProfileEdit';
 import SellerRegister from '~/Screens/Main/Mypage/SellerRegister/SellerRegister';
 import SellerService from '~/Screens/Main/Mypage/SellerService/SellerService';
+import TodayEventDetail from '~/Screens/Main/TodayEvent/TodayEventDetail/TodayEventDetail';
 
 const Stack = createStackNavigator();
 
@@ -52,6 +53,11 @@ const PartnerNavigation = () => {
         <Stack.Screen
             name="SellerService"
             component={SellerService}
+            options={{headerShown: false}}
+        />
+        <Stack.Screen
+            name="TodayEventDetail"
+            component={TodayEventDetail}
             options={{headerShown: false}}
         />
         </Stack.Navigator>
