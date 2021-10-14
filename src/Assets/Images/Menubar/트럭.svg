@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="37.9" height="26.091" viewBox="0 0 37.9 26.091">
+  <g id="트럭" transform="translate(-1230.053 -819.909)">
+    <line id="선_3" data-name="선 3" x2="12.526" transform="translate(1243.079 841.974)" fill="none" stroke="#fff" stroke-width="1"/>
+    <g id="타원_6" data-name="타원 6" transform="translate(1255.158 837.053)" fill="none" stroke="#fff" stroke-width="1">
+      <circle cx="4.474" cy="4.474" r="4.474" stroke="none"/>
+      <circle cx="4.474" cy="4.474" r="3.974" fill="none"/>
+    </g>
+    <g id="타원_7" data-name="타원 7" transform="translate(1234.579 837.053)" fill="none" stroke="#fff" stroke-width="1">
+      <circle cx="4.474" cy="4.474" r="4.474" stroke="none"/>
+      <circle cx="4.474" cy="4.474" r="3.974" fill="none"/>
+    </g>
+    <line id="선_4" data-name="선 4" x2="4.474" transform="translate(1230.553 841.974)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <path id="패스_53" data-name="패스 53" d="M-.312,0H1.67" transform="translate(1233.356 836.605)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <path id="패스_52" data-name="패스 52" d="M9.738,0h1" transform="translate(1224.289 831.237)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <path id="패스_54" data-name="패스 54" d="M0,0H.611" transform="translate(1235.026 825)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_8" data-name="선 8" x2="23.263" transform="translate(1230.553 820.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_9" data-name="선 9" y1="21.474" x2="4.474" transform="translate(1249.342 820.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_10" data-name="선 10" x1="2.684" transform="translate(1263.658 841.974)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+    <path id="패스_32" data-name="패스 32" d="M1256.063,827.563h8.612s6.934,1.23,6.263,8.053-1.23,7.214-1.23,7.214" transform="translate(-3.533 -0.743)" fill="none" stroke="#fff" stroke-width="1"/>
+  </g>
+</svg>

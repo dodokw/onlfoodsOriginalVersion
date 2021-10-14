@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "790470474653",
+    "project_id": "foodinus-28aed",
+    "storage_bucket": "foodinus-28aed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790470474653:android:7e372a085cf268e8ab0d74",
+        "android_client_info": {
+          "package_name": "com.todayfoods"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790470474653-541h2f48g2t246vlobtdm6au5pi5di2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7djuo-Ya2yvaxMBKg-kXKRcoB9rpOVaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790470474653-541h2f48g2t246vlobtdm6au5pi5di2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="38.925" viewBox="0 0 32 38.925">
+  <g id="그룹_245" data-name="그룹 245" transform="translate(2142 -1468.9)">
+    <g id="alarm-outline" transform="translate(-2201.07 1389.4)">
+      <path id="패스_141" data-name="패스 141" d="M83.678,90.7a8.913,8.913,0,1,0-8.913,8.913A8.913,8.913,0,0,0,83.678,90.7ZM68.418,80.624A2.6,2.6,0,0,0,66.74,80l-.155,0a2.76,2.76,0,0,0-2.515,2.837,2.129,2.129,0,0,0,.606,1.517.253.253,0,0,0,.18.1h.049a.18.18,0,0,0,.141-.073l3.385-3.325a.3.3,0,0,0,.086-.223A.293.293,0,0,0,68.418,80.624Zm12.687,0A2.6,2.6,0,0,1,82.783,80l.155,0a2.76,2.76,0,0,1,2.515,2.837,2.129,2.129,0,0,1-.606,1.517.253.253,0,0,1-.18.1h-.049a.18.18,0,0,1-.141-.073l-3.385-3.324A.3.3,0,0,1,81,80.836.293.293,0,0,1,81.105,80.624Z" transform="translate(0)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1"/>
+      <path id="패스_142" data-name="패스 142" d="M104.983,160v6.239h-4.456m13.369,8.913-2.228-2.228m-15.6,2.228,2.228-2.228" transform="translate(-30.218 -75.544)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+    <text id="오늘만" transform="translate(-2142 1504.825)" fill="#333" font-size="11" font-family="NanumGothicBold, NanumGothic"><tspan x="0" y="0">오늘만</tspan></text>
+    <text id="오늘만-2" data-name="오늘만" transform="translate(-2142 1504.825)" fill="#333" font-size="11" font-family="NanumGothicBold, NanumGothic"><tspan x="0" y="0">오늘만</tspan></text>
+  </g>
+</svg>

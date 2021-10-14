@@ -1,0 +1,33 @@
+	<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="27.799"
+						height="27.799"
+						viewBox="0 0 27.799 27.799">
+						<g
+							id="그룹_75"
+							data-name="그룹 75"
+							transform="translate(-690.025 -169.595) rotate(-45)">
+							<line
+								id="선_33"
+								data-name="선 33"
+								x2="14"
+								y2="14"
+								transform="translate(361 620.5)"
+								fill="none"
+								stroke='#fff'
+								strokeLinecap="round"
+								strokeWidth="4"
+							/>
+							<line
+								id="선_34"
+								data-name="선 34"
+								x1="14"
+								y2="14"
+								transform="translate(361 620.5)"
+								fill="none"
+								stroke='#fff'
+								strokeLinecap="round"
+								strokeWidth="4"
+							/>
+						</g>
+					</svg>

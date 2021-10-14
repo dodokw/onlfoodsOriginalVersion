@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
+  <g id="재고관리" transform="translate(0.39 0.411)">
+    <rect id="사각형_84" data-name="사각형 84" width="10" height="10" rx="1" transform="translate(-0.39 10.589)" fill="#fff"/>
+    <rect id="사각형_85" data-name="사각형 85" width="10" height="10" rx="1" transform="translate(10.61 10.589)" fill="#fff"/>
+    <line id="선_9" data-name="선 9" x2="6.887" transform="translate(1.11 13.48)" fill="none" stroke="#f06f77" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_10" data-name="선 10" x2="6.887" transform="translate(12.11 13.48)" fill="none" stroke="#f06f77" stroke-linecap="round" stroke-width="1"/>
+    <rect id="사각형_86" data-name="사각형 86" width="10" height="10" rx="1" transform="translate(5.61 -0.411)" fill="#fff"/>
+    <line id="선_11" data-name="선 11" x2="6.887" transform="translate(7.11 2.728)" fill="none" stroke="#f06f77" stroke-linecap="round" stroke-width="1"/>
+  </g>
+</svg>

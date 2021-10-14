@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="38.625" viewBox="0 0 32 38.625">
+  <g id="그룹_246" data-name="그룹 246" transform="translate(2089 -1469.2)">
+    <text id="오늘만" transform="translate(-2089 1504.825)" fill="#ec636b" font-size="11" font-family="NanumGothicBold, NanumGothic"><tspan x="0" y="0">오늘만</tspan></text>
+    <g id="그룹_238" data-name="그룹 238" transform="translate(0)">
+      <line id="선_135" data-name="선 135" y1="3" x2="3" transform="translate(-2082.217 1486)" fill="none" stroke="#ff636c" stroke-linecap="round" stroke-width="1"/>
+      <line id="선_136" data-name="선 136" x1="3" y1="3" transform="translate(-2067.392 1486)" fill="none" stroke="#ff636c" stroke-linecap="round" stroke-width="1"/>
+      <path id="패스_141" data-name="패스 141" d="M83.678,90.7a9.322,9.322,0,0,0-.593-3.2,8.816,8.816,0,0,0-8.32-5.711A8.913,8.913,0,1,0,83.678,90.7ZM68.418,80.624A2.6,2.6,0,0,0,66.74,80l-.155,0a2.76,2.76,0,0,0-2.515,2.837,2.129,2.129,0,0,0,.606,1.517.253.253,0,0,0,.18.1h.049a.18.18,0,0,0,.141-.073l3.385-3.325a.3.3,0,0,0,.086-.223A.293.293,0,0,0,68.418,80.624Zm12.687,0A2.6,2.6,0,0,1,82.783,80l.155,0a2.76,2.76,0,0,1,2.515,2.837,2.129,2.129,0,0,1-.606,1.517.253.253,0,0,1-.18.1h-.049a.18.18,0,0,1-.141-.073l-3.385-3.324A.3.3,0,0,1,81,80.836.293.293,0,0,1,81.105,80.624Z" transform="translate(-2148.07 1389.4)" fill="#ec636b" stroke="#ec636b" stroke-miterlimit="10" stroke-width="0.4"/>
+      <path id="패스_163" data-name="패스 163" d="M-2077.681,1479.936h4.855v-5.965" transform="translate(-0.479 1)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

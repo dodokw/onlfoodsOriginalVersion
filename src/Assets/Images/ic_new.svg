@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.108" height="8.591" viewBox="0 0 15.108 8.591">
+  <g id="트럭" transform="translate(0.5 0.591)">
+    <line id="선_3" data-name="선 3" x2="3.93" transform="translate(6.456 6.737)" fill="none" stroke="#ec636b" stroke-width="1"/>
+    <g id="타원_6" data-name="타원 6" transform="translate(10.246 5.193)" fill="none" stroke="#ec636b" stroke-width="1">
+      <circle cx="1.404" cy="1.404" r="1.404" stroke="none"/>
+      <circle cx="1.404" cy="1.404" r="0.904" fill="none"/>
+    </g>
+    <g id="타원_7" data-name="타원 7" transform="translate(3.789 5.193)" fill="none" stroke="#ec636b" stroke-width="1">
+      <circle cx="1.404" cy="1.404" r="1.404" stroke="none"/>
+      <circle cx="1.404" cy="1.404" r="0.904" fill="none"/>
+    </g>
+    <line id="선_4" data-name="선 4" x2="1.404" transform="translate(2.526 6.737)" fill="none" stroke="#ec636b" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_5" data-name="선 5" x2="3.93" transform="translate(0 5.053)" fill="none" stroke="#ec636b" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_6" data-name="선 6" x2="3.368" transform="translate(0.561 3.368)" fill="none" stroke="#ec636b" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_7" data-name="선 7" x2="2.807" transform="translate(1.123 1.404)" fill="none" stroke="#ec636b" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_8" data-name="선 8" x2="7.298" transform="translate(2.526)" fill="none" stroke="#ec636b" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_9" data-name="선 9" y1="6.737" x2="1.404" transform="translate(8.421)" fill="none" stroke="#ec636b" stroke-linecap="round" stroke-width="1"/>
+    <line id="선_10" data-name="선 10" x1="0.842" transform="translate(12.912 6.737)" fill="none" stroke="#ec636b" stroke-linecap="round" stroke-width="1"/>
+    <path id="패스_32" data-name="패스 32" d="M1256.063,827.563h2.7a2.35,2.35,0,0,1,1.965,2.526c-.211,2.14-.386,2.263-.386,2.263" transform="translate(-1246.641 -825.58)" fill="none" stroke="#ec636b" stroke-width="1"/>
+  </g>
+</svg>

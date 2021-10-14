@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="41.5" viewBox="0 0 52 41.5">
+  <g id="그룹_250" data-name="그룹 250" transform="translate(1854 -1542.5)">
+    <g id="그룹_233" data-name="그룹 233" transform="translate(-2199 857.128)">
+      <g id="user_1_" data-name="user (1)" transform="translate(357 685.875)">
+        <g id="그룹_30" data-name="그룹 30">
+          <path id="패스_33" data-name="패스 33" d="M18.9,14.313a11.028,11.028,0,0,0-4.207-2.639,6.4,6.4,0,1,0-7.242,0A11.088,11.088,0,0,0,0,22.141H1.73a9.341,9.341,0,1,1,18.681,0h1.729A11,11,0,0,0,18.9,14.313ZM11.07,11.07A4.67,4.67,0,1,1,15.74,6.4a4.67,4.67,0,0,1-4.67,4.67Z" fill="#ec636b" stroke="#fff" stroke-width="1"/>
+          <text id="MY" transform="translate(14.22 22.208)" fill="#ec636b" font-size="8" font-family="NanumGothicBold, NanumGothic" letter-spacing="-0.05em"><tspan x="0" y="0">MY</tspan></text>
+          <path id="패스_127" data-name="패스 127" d="M.938,21.375v.25l20.25-.25s-.562-8.687-8.937-9.562S.938,20.188.938,20.188" fill="#ec636b"/>
+        </g>
+        <path id="교차_2" data-name="교차 2" d="M-290.741-7504.38v-3.454l-1.383,3.454h-1.616l-1.384-3.454v3.454h-.937v-4.881a.251.251,0,0,1,.025-.14c.017-.019.068-.028.153-.028h.952c.038,0,.06.006.068.019s.019.04.036.077l1.9,4.708,1.895-4.708c.017-.038.028-.064.036-.077s.032-.019.07-.019h.95c.087,0,.138.009.153.028a.237.237,0,0,1,.025.14v4.881Z" transform="translate(311 7526)" fill="#fff"/>
+        <circle id="타원_81" data-name="타원 81" cx="6" cy="6" r="6" transform="translate(5 0.125)" fill="#ec636b"/>
+      </g>
+    </g>
+    <text id="마이페이지" transform="translate(-1854 1581)" fill="#ec636b" font-size="11" font-family="NanumGothicBold, NanumGothic"><tspan x="0" y="0">마이페이지</tspan></text>
+  </g>
+</svg>
