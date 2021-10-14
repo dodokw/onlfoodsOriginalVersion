@@ -14,6 +14,7 @@ import InventoryState from './InventoryState/InventoryState';
 import Icon from 'react-native-vector-icons/Feather';
 import {floatingHide} from '~/Modules/Action';
 import dayjs from 'dayjs';
+import { useIsFocused } from '@react-navigation/core';
 
 const Container = styled.View`
 	flex: 1;
@@ -66,9 +67,11 @@ const TabLabel = styled.Text`
 const InventoryManagement = ({navigation}) => {
 	const dispatch = useDispatch();
 	const {state} = useSelector(state => state.loginReducer);
-	const [date, setDate] = useState('');
+	const [date, setDate] = useState();
 	const [tabState, setTabState] = useState(1);
 	const [showDateTimePicker, setShowDateTimePicker] = useState(false);
+	const nowTime=Date.now().toString();
+	const isFocused = useIsFocused();
 
 	const onConfirm = date => {
 		const selectDate = dayjs(date).format('YYYY-MM-DD');
@@ -83,6 +86,9 @@ const InventoryManagement = ({navigation}) => {
 
 		return () => parent?.setOptions({tabBarVisible: true});
 	}, []);
+	useEffect(() => {
+		setDate('');
+	}, [isFocused])
 
 	return (
 		<Container>
@@ -99,9 +105,9 @@ const InventoryManagement = ({navigation}) => {
 					<DateButton disabled={true}>
 						<Icon name="calendar" size={20} color="#ffffff" />
 					</DateButton>
-					<DateButton onPress={() => setShowDateTimePicker(true)}>
-						<DateText>{date === '' ? '전체' : date}</DateText>
-						<Icon name="calendar" size={20} />
+					<DateButton onPress={() => setShowDateTimePicker(false)/*true로 바꾸면 달력이 살아남*/ }>
+						<DateText>{date === '' ? dayjs().format('YYYY-MM-DD') : date}</DateText>
+						{/* <Icon name="calendar" size={20} /> */}
 					</DateButton>
 					<DateButton
 						style={{justifyContent: 'flex-end'}}
@@ -119,7 +125,7 @@ const InventoryManagement = ({navigation}) => {
 						<TabLabel selected={tabState === 1}>품목현황</TabLabel>
 					</TabBox>
 					<TabBox selected={tabState === 2} onPress={() => setTabState(2)}>
-						<TabLabel selected={tabState === 2}>출고</TabLabel>
+						<TabLabel selected={tabState === 2}>출고내역</TabLabel>
 					</TabBox>
 				</TabWrap>
 			</TabContainer>

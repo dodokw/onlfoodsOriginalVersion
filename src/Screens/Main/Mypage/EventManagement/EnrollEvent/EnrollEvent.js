@@ -367,20 +367,20 @@ const EnrollEvent = ({navigation, route}) => {
 
 	const goEnroll = async () => {
 		console.log('타이틀', title.replace(/ /g, '').trim());
-		if (mainImg === undefined) {
-			return Alert.alert('알림', '대표이미지를 등록해주세요.', [
-				{text: '확인'},
-			]);
-		}
-		if (subImg.length === 0) {
-			return Alert.alert('알림', '추가이미지는 최소 1장이 있어야합니다.', [
-				{text: '확인'},
-			]);
-		}
+		// if (mainImg === undefined) {
+		// 	return Alert.alert('알림', '대표이미지를 등록해주세요.', [
+		// 		{text: '확인'},
+		// 	]);
+		// }
+		// if (subImg.length === 0) {
+		// 	return Alert.alert('알림', '추가이미지는 최소 1장이 있어야합니다.', [
+		// 		{text: '확인'},
+		// 	]);
+		// }
 		if (
 			title.replace(/ /g, '').trim() === '' ||
 			type === '' ||
-			address.address === '' ||
+			// address.address === '' ||
 			info.replace(/ /g, '').trim() === ''
 		) {
 			return Alert.alert(
@@ -390,7 +390,7 @@ const EnrollEvent = ({navigation, route}) => {
 			);
 		}
 		if (startDate === '시작일' || endDate === '종료일') {
-			return Alert.alert('알림', '공지 날짜를 입력해주세요.', [{text: '확인'}]);
+			return Alert.alert('알림', '행사 날짜를 입력해주세요.', [{text: '확인'}]);
 		}
 		if (dayjs(startDate) > dayjs(endDate)) {
 			return Alert.alert('알림', '시작일이 종료일보다 미래입니다.', [
@@ -411,7 +411,7 @@ const EnrollEvent = ({navigation, route}) => {
 				subImg,
 			);
 			if (res.result === 'true') {
-				Alert.alert('알림', '공지가 등록되었습니다.', [
+				Alert.alert('알림', '오늘의 행사가 등록되었습니다.', [
 					{text: '확인', onPress: () => navigation.goBack()},
 				]);
 			} else {
@@ -439,7 +439,7 @@ const EnrollEvent = ({navigation, route}) => {
 		if (
 			title.replace(/ /g, '').trim() === '' ||
 			type === '' ||
-			address.address === '' ||
+			// address.address === '' ||
 			info.replace(/ /g, '').trim() === ''
 		) {
 			return Alert.alert(
@@ -468,7 +468,7 @@ const EnrollEvent = ({navigation, route}) => {
 				subImg,
 			);
 			if (res.result === 'true') {
-				Alert.alert('알림', '공지가 수정되었습니다.', [
+				Alert.alert('알림', '오늘의 행사 상품이 수정되었습니다.', [
 					{text: '확인', onPress: () => navigation.goBack()},
 				]);
 			} else {
@@ -491,7 +491,7 @@ const EnrollEvent = ({navigation, route}) => {
 	return (
 		<Container>
 			<Header
-				title={item_id ? '행사수정' : '행사등록'}
+				title={item_id ? '공지수정' : '공지등록'}
 				headerLeft={<BackButton onPress={() => navigation.goBack()} />}
 				headerRight={
 					<SwitchingButton onToggle={state} disabled={true} border={true} />
@@ -499,21 +499,7 @@ const EnrollEvent = ({navigation, route}) => {
 				border={true}
 			/>
 			<ScrollView contentContainerStyle={{paddingBottom: 50}}>
-				{/* <Section style={{paddingTop: 20}}>
-					<TitleWrap>
-						<TitleLabel>배너</TitleLabel>
-						<AddBannerButton>
-							<AddBannerButtonLabel>+ 배너등록</AddBannerButtonLabel>
-						</AddBannerButton>
-					</TitleWrap>
-					<BannerBox>
-						<BannerImage
-							source={require('~/Assets/Images/company_banner.png')}
-							resizeMode="cover"
-						/>
-					</BannerBox>
-				</Section> */}
-				<Section style={{padding: 20}}>
+			<Section style={{padding: 20}}>
 					<TitleLabel>대표이미지</TitleLabel>
 					<ImageAddButton onPress={() => pickImg('main')}>
 						{mainImg === undefined ? (
@@ -555,12 +541,27 @@ const EnrollEvent = ({navigation, route}) => {
 					</SubText>
 					<Dive />
 				</Section>
+				{/* <Section style={{paddingTop: 20}}>
+					<TitleWrap>
+						<TitleLabel>배너</TitleLabel>
+						<AddBannerButton>
+							<AddBannerButtonLabel>+ 배너등록</AddBannerButtonLabel>
+						</AddBannerButton>
+					</TitleWrap>
+					<BannerBox>
+						<BannerImage
+							source={require('~/Assets/Images/company_banner.png')}
+							resizeMode="cover"
+						/>
+					</BannerBox>
+				</Section> */}
+				
 				<Section style={{paddingHorizontal: 20}}>
-					<TitleLabel>공지명</TitleLabel>
+					<TitleLabel>제목</TitleLabel>
 					<InputBox>
 						<TextInput
 							name="title"
-							placeholder="공지명"
+							placeholder="공지 제목"
 							placeholderColor={ColorLineGrey}
 							value={title}
 							onChangeText={text => setTitle(text)}
@@ -618,7 +619,7 @@ const EnrollEvent = ({navigation, route}) => {
 							<Icon name="calendar" size={20} />
 						</DateBox>
 					</PeriodWrap>
-					{/* <TitleLabel>행사위치</TitleLabel>
+					{/* <TitleLabel>공지위치</TitleLabel>
 
 					<RowWrap>
 						<InputBox>
@@ -640,19 +641,19 @@ const EnrollEvent = ({navigation, route}) => {
 							onChangeText={text => setAddress({...address, sangse: text})}
 						/>
 					</InputBox> */}
-					<TitleLabel>공지정보</TitleLabel>
+					<TitleLabel>공지내용</TitleLabel>
 					<MultiTextInput
-						placeholder="공지정보를 입력해주세요."
+						placeholder="공지내용을 입력해주세요."
 						placeholderColor={ColorLineGrey}
 						multiline={true}
 						value={info}
 						onChangeText={text => setInfo(text)}
 						style={{textAlignVertical: 'top'}}
 					/>
-					<EnrollButton onPress={item_id ? goModify : goEnroll}>
+				</Section>
+				<EnrollButton onPress={item_id ? goModify : goEnroll}>
 						<EnrollLabel>{item_id ? '수정하기' : '등록하기'}</EnrollLabel>
 					</EnrollButton>
-				</Section>
 			</ScrollView>
 			<DateTimePickerModal
 				isVisible={showDatePicker !== ''}

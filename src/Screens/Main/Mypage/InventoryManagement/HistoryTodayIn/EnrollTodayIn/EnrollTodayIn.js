@@ -269,7 +269,7 @@ const EnrollTodayIn = ({navigation, route}) => {
 	const [tex, setTex] = useState(true);
 	const [show, setShow] = useState(true);
 	const [nonePrice, setNonePrice] = useState(false);
-	const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));
+	const [date, setDate] = useState(dayjs('2100-10-01').format('YYYY-MM-DD'));
 	const [info, setInfo] = useState('');
 	const [isLoading, setLoading] = useState(false);
 	const [showDatePicker, setShowDatePicker] = useState(false);
@@ -320,14 +320,14 @@ const EnrollTodayIn = ({navigation, route}) => {
 	};
 
 	const handleConfirm = date => {
-		if (dayjs(date) < dayjs()) {
-			setShowDatePicker(false);
-			return Alert.alert('알림', '오늘보다 미래로 선택해주세요.', [
-				{text: '확인'},
-			]);
-		}
-		console.log(showDatePicker, date);
-		setDate(dayjs(date).format('YYYY-MM-DD'));
+		// if (dayjs(date) < dayjs()) {
+		// 	setShowDatePicker(false);
+		// 	return Alert.alert('알림', '오늘보다 미래로 선택해주세요.', [
+		// 		{text: '확인'},
+		// 	]);
+		// }
+		// console.log(showDatePicker, date);
+		setDate(dayjs('2100-10-01').format('YYYY-MM-DD'));
 		setShowDatePicker(false);
 	};
 
@@ -531,7 +531,7 @@ const EnrollTodayIn = ({navigation, route}) => {
 	return (
 		<Container>
 			<Header
-				title={item_id ? '재고수정' : '재고등록'}
+				title={item_id ? '상품순정' : '상품등록'}
 				headerLeft={<BackButton onPress={() => navigation.goBack()} />}
 				headerRight={
 					<SwitchingButton onToggle={state} disabled={true} border={true} />
@@ -599,14 +599,14 @@ const EnrollTodayIn = ({navigation, route}) => {
 						<>
 							<RowWrap style={{justifyContent: 'space-between'}}>
 								<TitleLabel>상품코드</TitleLabel>
-								<RowWrap>
+								{/* <RowWrap>
 									<Checkbox.Android
 										color={ColorBlue}
 										onPress={() => setNew(!isNew)}
 										status={isNew ? 'checked' : 'unchecked'}
 									/>
 									<TitleLabel style={{color: ColorBlue}}>신규상품</TitleLabel>
-								</RowWrap>
+								</RowWrap> */}
 							</RowWrap>
 						</>
 					)}
@@ -765,11 +765,11 @@ const EnrollTodayIn = ({navigation, route}) => {
 						</SelectedButton>
 					</Wrap>
 
-					<TitleLabel>유통기한</TitleLabel>
+					{/* <TitleLabel>유통기한</TitleLabel>
 					<DateBox onPress={() => setShowDatePicker(true)}>
 						<DateLabel>{date}</DateLabel>
 						<Icon name="calendar" size={20} />
-					</DateBox>
+					</DateBox> */}
 
 					<TitleLabel>상품내용</TitleLabel>
 					<MultiTextInput

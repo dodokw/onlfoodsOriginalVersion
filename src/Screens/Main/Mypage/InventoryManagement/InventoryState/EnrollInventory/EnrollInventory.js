@@ -264,20 +264,20 @@ function EnrollInventory({navigation, route}) {
 	const [price, setPrice] = useState('');
 	const [tex, setTex] = useState(true);
 	const [nonePrice, setNonePrice] = useState(false);
-	const [date, setDate] = useState(dayjs().format('YYYY-MM-DD'));
+	const [date, setDate] = useState(dayjs('2100-10-01').format('YYYY-MM-DD'));
 	const [isLoading, setLoading] = useState(false);
 	const [showDatePicker, setShowDatePicker] = useState(false);
 
 	const handleConfirm = date => {
-		if (dayjs(date) < dayjs()) {
-			setShowDatePicker(false);
-			return Alert.alert('알림', '오늘보다 미래로 선택해주세요.', [
-				{text: '확인'},
-			]);
-		}
-		console.log(showDatePicker, date);
-		setDate(dayjs(date).format('YYYY-MM-DD'));
-		setShowDatePicker(false);
+		// if (dayjs(date) < dayjs()) {
+		// 	setShowDatePicker(false);
+		// 	return Alert.alert('알림', '오늘보다 미래로 선택해주세요.', [
+		// 		{text: '확인'},
+		// 	]);
+		// }
+		// console.log(showDatePicker, date);
+		setDate(dayjs('2100-10-01').format('YYYY-MM-DD'));
+		// setShowDatePicker(false);
 	};
 
 	const handleCancel = () => {
@@ -339,7 +339,7 @@ function EnrollInventory({navigation, route}) {
 	return (
 		<Container>
 			<Header
-				title={'품목등록'}
+				title={'품목 등록'}
 				headerLeft={<BackButton onPress={() => navigation.goBack()} />}
 				headerRight={
 					<SwitchingButton onToggle={state} disabled={true} border={true} />
@@ -475,11 +475,11 @@ function EnrollInventory({navigation, route}) {
 						</SelectedButton>
 					</Wrap>
 
-					<TitleLabel>유통기한</TitleLabel>
+					{/* <TitleLabel>유통기한</TitleLabel>
 					<DateBox onPress={() => setShowDatePicker(true)}>
 						<DateLabel>{date}</DateLabel>
 						<Icon name="calendar" size={20} />
-					</DateBox>
+					</DateBox> */}
 
 					<EnrollButton onPress={goEnroll}>
 						<EnrollLabel>등록하기</EnrollLabel>
