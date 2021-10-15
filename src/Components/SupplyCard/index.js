@@ -282,12 +282,12 @@ const SupplyCard = ({item, setShowDetailId, state, getData, user, zzim}) => {
 						<CompanyContentText numberOfLines={1}>
 							{item.mt_item ? item.mt_item : item.slt_company_item}
 						</CompanyContentText>
-						<CompanyPeriodText>
+						{/* <CompanyPeriodText>
 							품목 현황 갱신일{' '}
 							{item.qty_update.split(' ')[0] === '0000-00-00'
 								? '-'
 								: item.qty_update.split(' ')[0]}
-						</CompanyPeriodText>
+						</CompanyPeriodText> */}
 						<CompanyPeriodText>주문일 {item.ot_wdate}</CompanyPeriodText>
 						{item.ot_dsdate && (
 							<CompanyPeriodText>
