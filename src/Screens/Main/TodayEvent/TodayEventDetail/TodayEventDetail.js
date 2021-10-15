@@ -350,7 +350,7 @@ const TodayEventDetail = ({navigation, route}) => {
 			console.log(err);
 		}
 	};
-
+//stashtest
 	useEffect(() => {
 		const parent = navigation.dangerouslyGetParent();
 		parent?.setOptions({tabBarVisible: false});

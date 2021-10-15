@@ -78,6 +78,11 @@ const ButtonBox= styled.TouchableOpacity`
     padding: 10px 20px;
     background-color : #ec636b;
 `;
+const ButtonBox2= styled.TouchableOpacity`
+    width:45%;
+    padding: 10px 20px;
+    background-color : #adb5bd;
+`;
 const ButtonLabel=styled.Text`
     color:#ffffff;
     text-align:center;
@@ -308,13 +313,9 @@ const ButtonLabel=styled.Text`
                 <ButtonBox onPress={() =>goChatting()}>
                     <ButtonLabel>업체보기</ButtonLabel>
                 </ButtonBox>
-                :<ButtonBox onPress={() =>Alert.alert('구독회원 기능','해당 유저는 구독 기능을 사용하지 않고 있습니다.',[
-                    {
-                      text: "확인"
-                    },
-                  ])}>
-                <ButtonLabel>내업체보기</ButtonLabel>
-            </ButtonBox>}
+                :<ButtonBox2 disabled={true}>
+                <ButtonLabel>업체보기</ButtonLabel>
+            </ButtonBox2>}
     
                 <ButtonBox onPress={() => twoFunc()}>
                     <ButtonLabel>채팅하기</ButtonLabel>
@@ -327,13 +328,9 @@ const ButtonLabel=styled.Text`
                  <ButtonBox onPress={() =>goChatting()}>
                      <ButtonLabel>업체보기</ButtonLabel>
                  </ButtonBox>
-                 :<ButtonBox onPress={() =>Alert.alert('구독회원 기능','해당 유저는 구독 기능을 사용하지 않고 있습니다.',[
-                     {
-                       text: "확인"
-                     },
-                   ])}>
-                 <ButtonLabel>내업체보기</ButtonLabel>
-             </ButtonBox>}
+                 :<ButtonBox2 disabled={true}>
+                 <ButtonLabel>업체보기</ButtonLabel>
+             </ButtonBox2>}
                 <ButtonBox onPress={() => twoFunc()}>
                     <ButtonLabel>채팅하기</ButtonLabel>
                 </ButtonBox>
