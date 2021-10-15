@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Alert, Dimensions, Modal, Platform} from 'react-native';
 import {SvgXml} from 'react-native-svg';
+import checkOn from '~/Assets/Images/autoLogin_checkedOn.svg'
+import checkOff from '~/Assets/Images/autoLogin_checkedOff.svg'
 import Logo from '~/Assets/Images/seller_sub.svg';
 import styled from 'styled-components/native';
 import {FONTNanumGothicBold} from '~/Assets/Style/Fonts';
@@ -63,7 +65,6 @@ const SubInfoLabel = styled.Text`
 	font-weight: bold;
 	color: #ffffff;
 	font-size: 16px;
-	
 `;
 
 const RedLabel = styled.Text`
@@ -90,6 +91,7 @@ const ButtonLabel = styled.Text`
 const itemSubs = Platform.select({default: ['foodinus.seller']});
 
 const SellerTermWrap = styled.TouchableOpacity`
+	padding-left: 5px;
 	justify-content:center;
 	align-items:center;
 `;
@@ -99,9 +101,21 @@ const SellerTermLabel = styled.Text`
 	padding:5px 10px;
 	border-color:#fff;
 `;
+const ContractWrap = styled.View`
+	padding-left: 55px;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 10px;
+`;
+const ContranctCheckButton = styled.TouchableOpacity`
+	flex: 1;
+	flex-direction: row;
+	align-items: center;
+`;
 
 function ServiceInfo({visible, setVisible, checkSubscribe}) {
 	const navigation = useNavigation();
+	const [check, setCheck] = useState(false);
 	const goTerms = async type => {
 		setVisible(false);
 		return navigation.navigate('Terms', {type});
@@ -110,6 +124,17 @@ function ServiceInfo({visible, setVisible, checkSubscribe}) {
 		title: '판매자 구독',
 		localizedPrice: '',
 	});
+
+	const checkContract = () => {
+		if(!check){
+			Alert.alert('알림', '입점회원 이용약관의 동의가 필요합니다. 이용약관에 동의해주세요.', [
+				{text: '확인'},
+			]);
+		}else{
+			setVisible(false);
+			checkSubscribe();
+		}
+	}
 
 	async function init() {
 		if (Platform.OS === 'ios') RNIap.clearProductsIOS();
@@ -134,9 +159,10 @@ function ServiceInfo({visible, setVisible, checkSubscribe}) {
 	useEffect(() => {
 		if (visible) {
 			init();
+		}else{
+			setCheck(false);
 		}
 	}, [visible]);
-
 	
 	return (
 		<Modal visible={visible} setVisible={setVisible} transparent={true}>
@@ -161,13 +187,17 @@ function ServiceInfo({visible, setVisible, checkSubscribe}) {
 							- 별도의 <RedLabel>관리 웹페이지</RedLabel> 제공
 						</SubInfoLabel>
 					</SubInfoBox>
+					<ContractWrap>
+					<ContranctCheckButton onPress={() => setCheck(true)}>
+					<SvgXml xml={check ? checkOn : checkOff}/>
 					<SellerTermWrap onPress={()=>goTerms(5)}><SellerTermLabel>입점회원 이용약관</SellerTermLabel></SellerTermWrap>
+					</ContranctCheckButton>
+					</ContractWrap>
 					<ButtonBox>
 						<Button
 							style={{backgroundColor: ColorRed}}
 							onPress={() => {
-								setVisible(false);
-								checkSubscribe();
+								checkContract();
 							}}>
 							<ButtonLabel>추가정보 입력하고 구독하기</ButtonLabel>
 							{subscription.localizedPrice !== '' && (
