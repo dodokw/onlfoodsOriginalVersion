@@ -32,6 +32,7 @@ import Sharing from '~/Tools/Share';
 import { phoneReg, phoneReg2 } from '~/Tools/Reg';
 import jwtDecode from 'jwt-decode';
 import { APICallMemberInfo } from '~/API/MyPageAPI/MyPageAPI';
+import LoadingSpinner from '~/Components/LoadingSpinner';
 
 const SubscribeButton =styled.TouchableOpacity`
 border-width: 1px;
@@ -131,7 +132,7 @@ const PartnerList = ({navigation}) => {
 
 	const [friendNum, setFriendNum] = useState([]);
 	const [datas, setDatas] = useState([]);
-	const [contactLoading, setContackLoading] = useState(true);
+	const [contactLoading, setContackLoading] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [item, setItem] = useState([
 		// { idx: '', hp: '', id: '', name: '', img: ''},
@@ -209,15 +210,25 @@ const PartnerList = ({navigation}) => {
 		setMemberType(2);
 	};
 
+	useEffect(() => {
+		console.log('----------------------실행-------------------------------');
+		console.log(friendNum);
+		console.log('----------------------실행끝-------------------------------');
+	}, [friendNum])
+/*
+[{"company": "", "department": "", "displayName": "aaa", "emailAddresses": [], "familyName": "", "givenName": "aaa", "hasThumbnail": false, "imAddresses": [], "jobTitle": "", "middleName": "", "note": "", "phoneNumbers": [[Object]], "postalAddresses": [], "prefix": null, "rawContactId": "248", "recordID": "248", "suffix": null, "thumbnailPath": "", "urlAddresses": []}, {"company": "", "department": "", "displayName": "bbb", "emailAddresses": [], "familyName": "", "givenName": "bbb", "hasThumbnail": false, "imAddresses": [], "jobTitle": "", "middleName": "", "note": "", "phoneNumbers": [[Object]], "postalAddresses": [], "prefix": null, "rawContactId": "249", "recordID": "249", "suffix": null, "thumbnailPath": "", "urlAddresses": []}, {"company": "", "department": "", "displayName": "Nji", "emailAddresses": [], "familyName": "", "givenName": "Nji", "hasThumbnail": false, "imAddresses": [], "jobTitle": "", "middleName": "", "note": "", "phoneNumbers": [[Object]], "postalAddresses": [], "prefix": null, "rawContactId": "250", "recordID": "250", "suffix": null, "thumbnailPath": "", "urlAddresses": []}, {"company": "", "department": "", "displayName": "Seller", "emailAddresses": [], "familyName": "", "givenName": "Seller", "hasThumbnail": false, "imAddresses": [], "jobTitle": "", "middleName": "", "note": "", "phoneNumbers": [[Object]], "postalAddresses": [], "prefix": null, "rawContactId": "251", "recordID": "251", "suffix": null, "thumbnailPath": "", "urlAddresses": []}, {"company": "", "department": "", "displayName": "Zzzz", "emailAddresses": [], "familyName": "", "givenName": "Zzzz", "hasThumbnail": false, "imAddresses": [], "jobTitle": "", "middleName": "", "note": "", 
+"phoneNumbers": [[Object]], "postalAddresses": [], "prefix": null, "rawContactId": "252", "recordID": "252", "suffix": null, "thumbnailPath": "", "urlAddresses": []}]
+*/
 	const getContacts = () => {
 		setContackLoading(true);
 		try {
 			Contacts.getAll().then((contacts) => {
+				// console.log(contacts.phoneNumbers[0].number);
 				setFriendNum(
-					contacts.map(item =>
-						item.phoneNumbers[0].number.replace(
+					contacts.map((item) =>
+						item?.phoneNumbers[0]?.number.replace(
 							/(\d{3})(\d{4})(\d)/,
-							'$1-$2-$3',
+							'$1-$2-$3',	
 						),
 					),
 				);
@@ -678,7 +689,6 @@ const PartnerList = ({navigation}) => {
 			{/* </TouchableOpacity> */}
 
 			{/* ))} */}
-
 			<Header
 				title="비즈멤버"
 				headerRight={
@@ -692,7 +702,7 @@ const PartnerList = ({navigation}) => {
 					</HeaderRightWrap>
 				}
 			/>
-
+			
 			<ScrollView>
 				<MyProfileWrap>
 					{/* data = {item} */}
@@ -747,7 +757,6 @@ const PartnerList = ({navigation}) => {
 						)}
 					</MyGradeWrap>
 				</MyProfileWrap>
-
 				<PartnerTypeWrap>
 					<TypeTitle>
 						<PartnerTypeLabel onPress={() => setCompanyOpen(!companyOpen)}>
@@ -760,6 +769,7 @@ const PartnerList = ({navigation}) => {
 							onPress={() => setCompanyOpen(!companyOpen)}
 						/>
 					</TypeTitle>
+					
 					{companyOpen && (
 						<FlatList
 							style={{paddingHorizontal: 20}}
@@ -780,12 +790,6 @@ const PartnerList = ({navigation}) => {
 						/>
 					)}
 				</PartnerTypeWrap>
-				<PartnerProfile
-					data={companyDetail}
-					visible={showSub}
-					setVisible={setShowProfile}
-				/>
-
 				<PartnerTypeWrap >
 					<TypeTitle>
 						<PartnerTypeLabel onPress={() => setPartnerOpen(!partnerOpen)}>
@@ -797,6 +801,7 @@ const PartnerList = ({navigation}) => {
 							onPress={() => setPartnerOpen(!partnerOpen)}
 						/>
 					</TypeTitle>
+					{loading && (<LoadingSpinner/>)}
 					{partnerOpen && (
 						<FlatList
 							style={{paddingHorizontal: 20}}
@@ -819,6 +824,11 @@ const PartnerList = ({navigation}) => {
 				</PartnerTypeWrap>
 			</ScrollView>
 
+			<PartnerProfile
+					data={companyDetail}
+					visible={showSub}
+					setVisible={setShowProfile}
+				/>
 			<PartnerProfile
 				data={partnerDetail}
 				type={memberType}
