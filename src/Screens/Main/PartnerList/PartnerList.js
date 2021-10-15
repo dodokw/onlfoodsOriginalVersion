@@ -129,7 +129,7 @@ const PartnerList = ({navigation}) => {
 	const [showSub, setShowSub] = useState(false);
 	const [showProfile, setShowProfile] = useState(false);
 
-	const [friendNum, setFriendNum] = useState('');
+	const [friendNum, setFriendNum] = useState([]);
 	const [datas, setDatas] = useState([]);
 	const [contactLoading, setContackLoading] = useState(true);
 	const [loading, setLoading] = useState(false);
@@ -212,7 +212,7 @@ const PartnerList = ({navigation}) => {
 	const getContacts = () => {
 		setContackLoading(true);
 		try {
-			Contacts.getAll().then(contacts => {
+			Contacts.getAll().then((contacts) => {
 				setFriendNum(
 					contacts.map(item =>
 						item.phoneNumbers[0].number.replace(

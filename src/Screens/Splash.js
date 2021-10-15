@@ -12,6 +12,7 @@ import {APIAutoLogin} from '../API/SignAPI/SignAPI';
 import {Platform} from 'react-native';
 import {Alert} from 'react-native';
 import {PermissionsAndroid} from 'react-native';
+import Contacts from 'react-native-contacts';
 
 const Container = styled.View`
 	flex: 1;
@@ -34,17 +35,57 @@ const CompanyLabel = styled.Text`
 const Splash = ({isLoading, setLoading}) => {
 	const dispatch = useDispatch();
 
+// const requestContactPermission = async () => {
+	// 	if(Platform.OS === 'ios'){
+	// 	  console.warn('IOS');
+	// 	  return true
+	// 	}else{
+	// 	  console.warn('Android');
+	// 		await PermissionsAndroid.requestMultiple([
+	// 		  PermissionsAndroid.PERMISSIONS.WRITE_CONTACTS,
+	// 		  PermissionsAndroid.PERMISSIONS.READ_CONTACTS 
+	// 	  ]).then((result) => {
+	// 		if(result['android.permission.READ_CONTACTS'] && result['android.permission.WRITE_CONTACTS'] === 'granted'){
+	// 		  console.log('모든 권한 획득');
+	// 		  return setFlag(true);
+	// 		}else{
+	// 		  console.log('권한 거부');
+	// 		  return setFlag(false);
+	// 		}
+	// 	  })
+	// 	}
+		  // .then((result) => {
+	
+		  // })
+	
+		  // if(
+		  //   granted('android.permission.READ_CONTACTS') === PermissionsAndroid.RESULTS.GRANTED &&
+		  //   granted('android.permission.WRITE_CONTACTS') === PermissionsAndroid.RESULTS.GRANTED 
+		  // ) {
+		  //   return true
+		  // } else {
+		  //   return false
+		  // }
+		
+	//   }
+
 	async function requestLocationPermission() {
 		try {
 			// 퍼미션 요청 다이얼로그 보이기
-			const granted = await PermissionsAndroid.request(
+			const granted = await PermissionsAndroid.requestMultiple([
 				PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-			);
-			setFireBaseToken();
+				PermissionsAndroid.PERMISSIONS.WRITE_CONTACTS,
+				PermissionsAndroid.PERMISSIONS.READ_CONTACTS
+			]);
+
 			if (granted == PermissionsAndroid.RESULTS.GRANTED) {
 				console.log('위치 권한 허용');
+				console.log('연락처 권한 허용');
+				setFireBaseToken();
 			} else {
 				console.log('위치 권한 거절');
+				console.log('연락처 권한 거절');
+				setFireBaseToken();
 				// setLat(37.5642135);
 				// setLng(127.0016985);
 				// getMyLocation(127.0016985, 37.5642135);
