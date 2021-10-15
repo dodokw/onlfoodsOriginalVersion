@@ -177,7 +177,7 @@ function OrderSettingModal({
 				element => element.pt_qty === '' || element.pt_price === '',
 			);
 			if (emptyCheck.length > 0) {
-				return Alert.alert('알림', '수량 및 가격을 입력해주세요.', [
+				return Alert.alert('알림', '수량 및 단가를 입력해주세요.', [
 					{text: '확인', onPress: () => setLoading(false)},
 				]);
 			}
@@ -236,7 +236,7 @@ function OrderSettingModal({
 								<HeaderText>수량</HeaderText>
 							</HeaderBox>
 							<HeaderBox flex={2}>
-								<HeaderText ellipsizeMode="middle">가격</HeaderText>
+								<HeaderText ellipsizeMode="middle">단가</HeaderText>
 							</HeaderBox>
 						</ContentHeader>
 						<ScrollView>

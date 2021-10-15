@@ -399,7 +399,7 @@ function Mypage({navigation}) {
 					)} */}
 				</SubConatiner>
 
-				{footerData && <Footer item={footerData} />}
+				{/* {footerData && <Footer item={footerData} />} */}
 			</ScrollView>
 			{/* <CustomModal
 				visible={user.mt_id === 'no' && isFocused}

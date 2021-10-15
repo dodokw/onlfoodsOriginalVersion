@@ -184,11 +184,11 @@ const ChatItemCard = ({
 		try {
 			const res = await APIDelTodayIn(item.pt_idx);
 			if (res.result === 'true') {
-				Alert.alert('알림', '오늘의 입고 아이템이 삭제 되었습니다.', [
+				Alert.alert('알림', '오늘만 아이템이 삭제 되었습니다.', [
 					{text: '확인', onPress: () => getData()},
 				]);
 			} else {
-				Alert.alert('알림', '오늘의 입고 아이템 삭제를 실패하였습니다.', [
+				Alert.alert('알림', '오늘만 아이템 삭제를 실패하였습니다.', [
 					{text: '확인'},
 				]);
 			}

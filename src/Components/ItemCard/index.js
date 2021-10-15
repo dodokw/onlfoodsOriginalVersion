@@ -225,7 +225,7 @@ const ItemCard = ({item, onPress, setShowModal}) => {
 				<ItemPricWrap>
 					<ItemCountWrap>
 						<ItemCountLabelBox backgroundColor={ColorRed}>
-							<ItemCountLabel>입고수량</ItemCountLabel>
+							<ItemCountLabel>수량</ItemCountLabel>
 						</ItemCountLabelBox>
 						<ItemCountTextBox>
 							<ItemCountText>{item.pt_qty}개</ItemCountText>

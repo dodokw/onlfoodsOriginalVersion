@@ -272,7 +272,7 @@ const InventoryState = ({navigation, date}) => {
 						품목코드
 					</ContentTitle>
 					<ContentTitle style={{flex: 4}}>품목명</ContentTitle>
-					<ContentTitle style={{flex: 2}}>재고</ContentTitle>
+					<ContentTitle style={{flex: 2}}>수량</ContentTitle>
 					<ContentTitle style={{flex: 3}}>단가</ContentTitle>
 				</ContentTitleWrap>
 				{isLoading ? (

@@ -21,13 +21,18 @@ import OrderSettingModal from '~/Screens/Main/ChattingList/ChattingPage/OrderSet
 import NumberComma from '~/Tools/NumberComma';
 import ChattingItemBox from './ChattingItemBox';
 
-const Container = styled.View``;
+const Container = styled.View`
+	width:100%;
+	flex-direction: ${props => (props.me ? 'row-reverse' : 'row')};
+	align-items: flex-start;
+`;
 const Box = styled.View`
 	border-width: 5px;
 	border-radius: 10px;
 	border-color: ${props => props.color};
 	margin: 10px;
 	overflow: hidden;
+	width:80%;
 `;
 const Header = styled.View`
 	flex-direction: row;
@@ -53,7 +58,7 @@ const Type = styled.Text`
 	color: #ffffff;
 `;
 const Content = styled.View`
-	background-color: #dfdfdf;
+	background-color: #eee;
 	padding: 10px;
 `;
 const ContentHeader = styled.View`
@@ -270,13 +275,13 @@ function ChattingOrderList({
 	};
 
 	return (
-		<Container>
-			<Box color={me ? ColorRed : ColorLineGrey}>
+		<Container me={me}>
+			<Box color={me ? ColorRed : '#eee'}>
 				<Header>
 					<Title>주문 목록</Title>
-					<TypeBox>
+					{/* <TypeBox>
 						<Type>{deliver_type}</Type>
-					</TypeBox>
+					</TypeBox> */}
 				</Header>
 				<Content>
 					<ContentHeader>
@@ -298,7 +303,7 @@ function ChattingOrderList({
 						</HeaderBox>
 						{state !== 'req' && (
 							<HeaderBox flex={2}>
-								<HeaderText ellipsizeMode="middle">가격</HeaderText>
+								<HeaderText ellipsizeMode="middle">단가</HeaderText>
 							</HeaderBox>
 						)}
 					</ContentHeader>

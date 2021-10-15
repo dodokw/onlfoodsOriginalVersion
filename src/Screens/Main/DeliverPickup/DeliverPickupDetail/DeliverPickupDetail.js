@@ -797,7 +797,7 @@ const DeliverPickupDetail = ({navigation, route}) => {
 							paddingHorizontal: 20,
 							paddingVertical: 5,
 						}}>
-						<StockTitleLabel>주문 목록</StockTitleLabel>
+						<StockTitleLabel>거래 목록</StockTitleLabel>
 						<StockOrderHistoryButton
 							onPress={() => {
 								dispatch(saleroff());
@@ -806,7 +806,7 @@ const DeliverPickupDetail = ({navigation, route}) => {
 									before: before,
 								});
 							}}>
-							<StockOrderHistoryLabel>지난주문내역</StockOrderHistoryLabel>
+							<StockOrderHistoryLabel>지난거래내역</StockOrderHistoryLabel>
 						</StockOrderHistoryButton>
 					</Wrap>
 					<Dive style={{marginVertical: 10, marginHorizontal: 20}} />

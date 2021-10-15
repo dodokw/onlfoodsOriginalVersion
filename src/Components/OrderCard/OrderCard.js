@@ -174,9 +174,9 @@ function OrderCard({
 			<Box>
 				<Header>
 					<Title>주문 목록</Title>
-					<TypeBox>
+					{/* <TypeBox>
 						<Type>{data.delivery_type}</Type>
-					</TypeBox>
+					</TypeBox> */}
 				</Header>
 				<Content>
 					<ContentHeader>
@@ -193,7 +193,7 @@ function OrderCard({
 							<HeaderText>수량</HeaderText>
 						</HeaderBox>
 						<HeaderBox flex={2}>
-							<HeaderText ellipsizeMode="middle">가격</HeaderText>
+							<HeaderText ellipsizeMode="middle">단가</HeaderText>
 						</HeaderBox>
 					</ContentHeader>
 					<ContentMain>
@@ -230,9 +230,11 @@ function OrderCard({
 							onPress={() =>
 								Alert.alert(
 									'알림',
-									`${
-										data.delivery_type === '배송주문' ? '배송' : '픽업'
-									}완료 처리하시겠습니까?`,
+									// ${
+									// 	data.delivery_type === '배송주문' ? '배송' : '픽업'
+									// }
+									`
+									거래 완료 처리하시겠습니까?`,
 									[
 										{text: '확인', onPress: () => sendComplete()},
 										{text: '취소'},
@@ -243,7 +245,8 @@ function OrderCard({
 								style={{
 									color: ColorBlue,
 								}}>
-								{data.delivery_type === '배송주문' ? '배송' : '픽업'} 완료
+								{/* {data.delivery_type === '배송주문' ? '배송' : '픽업'} 완료 */}
+								거래 완료
 							</ButtonLabel>
 						</ButtonBox>
 						<ButtonBox
@@ -263,8 +266,8 @@ function OrderCard({
 									style={{
 										color: ColorBlue,
 									}}>
-									{data.delivery_type === '배송주문' ? '배송' : '픽업'}완료
-									처리된 주문입니다 .
+									{/* {data.delivery_type === '배송주문' ? '배송' : '픽업'}완료 */}
+									거래 완료 처리된 주문입니다 .
 								</ButtonLabel>
 							</ButtonBox>
 						</StateBox>
