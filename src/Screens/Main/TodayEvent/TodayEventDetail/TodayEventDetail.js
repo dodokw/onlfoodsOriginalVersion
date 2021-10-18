@@ -449,19 +449,11 @@ const TodayEventDetail = ({navigation, route}) => {
 							</ProductPeriod>
 						</Wrap>
 					</Wrap>
-<<<<<<< Updated upstream
 					<Wrap>
 						{/* <ProductSubText>
 							{data.et_addr1} {data.et_addr2}
 						</ProductSubText> */}
 					</Wrap>
-=======
-					{/* <Wrap>
-						<ProductSubText>
-							{data.et_addr1} {data.et_addr2}
-						</ProductSubText>
-					</Wrap> */}
->>>>>>> Stashed changes
 				</ProductInfo>
 				<ProductDescription>
 					<ProductDescriptionLabel>공지설명</ProductDescriptionLabel>
