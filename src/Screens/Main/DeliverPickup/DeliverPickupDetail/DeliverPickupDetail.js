@@ -384,7 +384,8 @@ const DeliverPickupDetail = ({navigation, route}) => {
 	const isFocused = useIsFocused();
 	const [categoryList, setCategoryList] = useState(defaultCategoryList);
 	const [data, setData] = useState(defualtData);
-	const[datas,setDatas] = useState([]);
+	const[datas,setDatas] = useState(undefined);
+	const [datasLoading, setDatasLoading] = useState(false);
 	const [keyword, setKeyword] = useState('');
 	const [items, setItems] = useState([]); //고유의 상품들
 	const [list, setList] = useState([]); //품목리스트에 담긴 상품들
@@ -447,7 +448,6 @@ const DeliverPickupDetail = ({navigation, route}) => {
 			const res = await axios.post('https://onlfoods.com/api/seller_notice_beta.php',form);
 			console.log(res.data);
 			if(res.data !== null){
-				setLoading(false);
 				setDatas(res.data);
 			// const decode = jwtDecode(res.data.jwt);
 			// console.log(decode.data.idx);
@@ -460,6 +460,7 @@ const DeliverPickupDetail = ({navigation, route}) => {
 			// 	setLoading(false);
 			// 	setDatas(res.data);	
 			}
+			setLoading(false);
 		} catch (error) {
 			console.log(error);
 		}
@@ -884,12 +885,12 @@ const DeliverPickupDetail = ({navigation, route}) => {
 				</StockContainer>
 				</StockWrap>
 			))}
-{tabState===1 && (datas === undefined ? (<LoadingSpinner/>):(
+{tabState===1 && (isLoading === true ? (<LoadingSpinner/>):(
 				<NoticeWrap>
 				{/* <Button title='test' onPress={()=>getList()}/> */}
 					<ContentMain>
 				
-						{datas === null ? (
+						{datas === undefined ? (
 							<HeaderText style={{marginVertical: 20}}>
 							공지가 없습니다.
 							</HeaderText>

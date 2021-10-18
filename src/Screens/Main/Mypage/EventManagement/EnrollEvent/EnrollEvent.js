@@ -338,9 +338,13 @@ const EnrollEvent = ({navigation, route}) => {
 			if (res.result === 'true') {
 				const decode = jwtDecode(res.jwt);
 				console.log(decode.data);
-				setMainImg({uri: decode.data.et_thumbnail});
+				if(decode.data.et_image !== null){
+					setMainImg({uri: decode.data.et_thumbnail});
 				const imgArr = decode.data.et_image.map(item => ({uri: item}));
 				setSubImg(imgArr);
+				}else{
+					setMainImg('');
+				}
 				setTitle(decode.data.et_name);
 				setType(decode.data.et_type);
 				setStartDate(decode.data.et_sdate);
@@ -426,16 +430,16 @@ const EnrollEvent = ({navigation, route}) => {
 	};
 
 	const goModify = async () => {
-		if (mainImg === undefined) {
-			return Alert.alert('알림', '대표이미지를 등록해주세요.', [
-				{text: '확인'},
-			]);
-		}
-		if (subImg.length === 0) {
-			return Alert.alert('알림', '추가이미지는 최소 1장이 있어야합니다.', [
-				{text: '확인'},
-			]);
-		}
+		// if (mainImg === undefined) {
+		// 	return Alert.alert('알림', '대표이미지를 등록해주세요.', [
+		// 		{text: '확인'},
+		// 	]);
+		// }
+		// if (subImg.length === 0) {
+		// 	return Alert.alert('알림', '추가이미지는 최소 1장이 있어야합니다.', [
+		// 		{text: '확인'},
+		// 	]);
+		// }
 		if (
 			title.replace(/ /g, '').trim() === '' ||
 			type === '' ||
