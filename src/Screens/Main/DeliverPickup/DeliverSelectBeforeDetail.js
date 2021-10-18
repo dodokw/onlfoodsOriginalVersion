@@ -90,6 +90,7 @@ const DeliverSelectBeforeDetail = ({route, navigation}) => {
 
 	useEffect(() => {
 		LogBox.ignoreLogs(['Each child in a list should have a unique']);
+		console.log(data);
 	});
 
 	// useEffect(() => {
@@ -98,8 +99,10 @@ const DeliverSelectBeforeDetail = ({route, navigation}) => {
 	// }, [isFocused])
 
 	useEffect(() => {
-		datacheck();
-	}, [data]);
+		if(isFocused){
+			datacheck();
+		}
+	}, [isFocused]);
 
 	return (
 		<Container>
@@ -108,7 +111,27 @@ const DeliverSelectBeforeDetail = ({route, navigation}) => {
 				title={data[0].slt_company_name + ' 담당자'}
 				border
 			/>
-			<ContentWrap>
+			<FlatList
+							style={{paddingHorizontal: 20}}
+							contentContainerStyle={{paddingBottom: 50}}
+							data={dataMap}
+							keyExtractor={item => {
+								item.idx;
+							}}
+							renderItem={({item}) => (
+								<PartnerCard
+									data={item}
+									// onPress={()=> setShowSub(true)}
+									onPress={() => navigation.navigate('DeliverPickupDetail', {
+										slt_idx: item.idx,
+										before: 'DeliverPickup',
+									})}
+									// onPress={() => navigation.navigate('PartnerProfile', {item})}
+								/>
+							)}
+							bounces={false}
+						/>
+			{/* <ContentWrap>
 				<ManagerListWrap>
                     <ManagerListTop>
 					<ManagerCount>담당자 인원: {data.length}</ManagerCount>
@@ -158,7 +181,7 @@ const DeliverSelectBeforeDetail = ({route, navigation}) => {
 						)}
 					/>)}
 				</ManagerListWrap>
-			</ContentWrap>
+			</ContentWrap> */}
 		</Container>
 	);
 };

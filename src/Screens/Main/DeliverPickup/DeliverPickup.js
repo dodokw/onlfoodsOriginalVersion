@@ -212,7 +212,7 @@ const DeliverPickup = ({navigation}) => {
 			 before: 'DeliverPickup',
 	     })
         }else{
-            navigation.push('DeliverSelectBeforeDetail', {data: res.data});
+            navigation.navigate('DeliverSelectBeforeDetail', {data: res.data});
         }
         }catch(err){
             console.log(err+'에러발생구역-------------------------------------------------------');
