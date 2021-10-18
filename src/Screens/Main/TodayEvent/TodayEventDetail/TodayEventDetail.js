@@ -450,9 +450,9 @@ const TodayEventDetail = ({navigation, route}) => {
 						</Wrap>
 					</Wrap>
 					<Wrap>
-						<ProductSubText>
+						{/* <ProductSubText>
 							{data.et_addr1} {data.et_addr2}
-						</ProductSubText>
+						</ProductSubText> */}
 					</Wrap>
 				</ProductInfo>
 				<ProductDescription>

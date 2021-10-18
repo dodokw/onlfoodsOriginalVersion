@@ -108,7 +108,7 @@ const CompanyCard = ({item, onPress}) => {
 	const locationData = useSelector(state => state.dataReducer.location);
 	const [countManager, setCountManager] = useState();
 
-	const getManagerList = async () => {
+	const CountManagerList = async () => {
         try{
         const form = new FormData();
         form.append('slt_idx', item.mt_idx);
@@ -120,7 +120,7 @@ const CompanyCard = ({item, onPress}) => {
 		}
 	}
 	useEffect(() => {
-		getManagerList();
+		CountManagerList();
 	}, [])
 
 		

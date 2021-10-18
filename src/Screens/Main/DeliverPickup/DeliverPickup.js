@@ -196,10 +196,28 @@ const DeliverPickup = ({navigation}) => {
 		outputRange: [-120, 0],
 	});
 
-	const modalFunc=(item) =>{
-		setShowSub(true);
-		setCheckDetail(item);
-	}
+	// const modalFunc=(item) =>{
+	// 	setShowSub(true);
+	// 	setCheckDetail(item);
+	// }
+	const getManagerList = async (item) => {
+        try{
+        const form = new FormData();
+        form.append('slt_idx', item.mt_idx);
+        const res = await axios.post('https://onlfoods.com/api/getManager_list.php', form);
+        console.log(res.data);
+        if(res.data.length === 1){
+             navigation.navigate('DeliverPickupDetail', {
+		     slt_idx: item.mt_idx,
+			 before: 'DeliverPickup',
+	     })
+        }else{
+            navigation.push('DeliverSelectBeforeDetail', {data: res.data});
+        }
+        }catch(err){
+            console.log(err+'에러발생구역-------------------------------------------------------');
+        }
+    }
 
 	useEffect(() => {
 		if(!isFocused){
@@ -466,7 +484,7 @@ const DeliverPickup = ({navigation}) => {
 										item={item}
 										onPress={() =>
 											// navigation.navigate('DeliverSelectBeforeDetail', {slt_idx: item.mt_idx})
-											modalFunc(item)
+											getManagerList(item)
 											// navigation.navigate('DeliverPickupDetail', {
 											// 	slt_idx: item.mt_idx,
 											// 	before: 'DeliverPickup',
@@ -502,11 +520,11 @@ const DeliverPickup = ({navigation}) => {
 					)}
 				</ContentContainer>
 			</Animated.View>
-			<DeliverPickupCheck
+			{/* <DeliverPickupCheck
 				data={checkDetail}
 				visible={showSub}
 				setVisible={setShowSub}
-			/>
+			/> */}
 			<DistanceModal
 				isShow={showDistance}
 				setIsShow={setShowDistance}

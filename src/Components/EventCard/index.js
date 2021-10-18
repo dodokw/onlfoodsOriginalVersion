@@ -145,11 +145,11 @@ const EventCard = ({
 					<EventContentText numberOfLines={1}>
 						{item.et_content ? item.et_content : item.slt_company_name}
 					</EventContentText>
-					{item.et_addr && (
+					{/* {item.et_addr && (
 						<EventContentText numberOfLines={1}>
 							{item.et_addr}
 						</EventContentText>
-					)}
+					)} */}
 					<EventPeriodText>
 						{item.et_sdate}~{item.et_edate}
 					</EventPeriodText>
