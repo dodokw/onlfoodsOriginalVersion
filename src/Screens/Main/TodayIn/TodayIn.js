@@ -85,7 +85,6 @@ const ContentContainer = styled.View`
 const ContentTitleLabel = styled.Text`
 	font-family: ${FONTNanumGothicBold};
 	font-size: 20px;
-	padding: 5px 0;
 `;
 const ContentTitleColorLabel = styled.Text`
 	color: ${ColorRed};
@@ -93,7 +92,6 @@ const ContentTitleColorLabel = styled.Text`
 
 const ContentOptions = styled.View`
 	flex-direction: row;
-	margin: 10px 0;
 	justify-content: space-between;
 `;
 

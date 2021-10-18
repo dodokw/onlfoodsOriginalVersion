@@ -363,7 +363,7 @@ const TodayEventDetail = ({navigation, route}) => {
 	return (
 		<Container>
 			<Header
-				title="오늘의 이벤트"
+				title={data.et_name}
 				headerLeft={
 					<BackButton
 						onPress={() => {
@@ -449,11 +449,19 @@ const TodayEventDetail = ({navigation, route}) => {
 							</ProductPeriod>
 						</Wrap>
 					</Wrap>
+<<<<<<< Updated upstream
 					<Wrap>
 						{/* <ProductSubText>
 							{data.et_addr1} {data.et_addr2}
 						</ProductSubText> */}
 					</Wrap>
+=======
+					{/* <Wrap>
+						<ProductSubText>
+							{data.et_addr1} {data.et_addr2}
+						</ProductSubText>
+					</Wrap> */}
+>>>>>>> Stashed changes
 				</ProductInfo>
 				<ProductDescription>
 					<ProductDescriptionLabel>공지설명</ProductDescriptionLabel>

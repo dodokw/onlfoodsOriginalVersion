@@ -334,7 +334,7 @@ const TabWrap = styled.View`
 const TabLabel = styled.Text`
 	font-family: ${FONTNanumGothicBold};
 	color: ${props =>
-		props.selected ? (props.state ? ColorRed : ColorLineGrey) : '#7b7b7b'};
+		props.selected ? (props.state ? ColorRed : ColorRed) : '#7b7b7b'};
 	text-align: center;
 `;
 const StockWrap = styled.View``;
@@ -345,7 +345,7 @@ const NoticeWrap = styled.View`
 `;
 const TabBox = styled.TouchableOpacity`
 	flex: 1;
-	border-color: ${props => (props.state ? ColorRed : ColorBlue)};
+	border-color: ${props => (props.state ? ColorRed : ColorRed)};
 	border-bottom-width: ${props => (props.selected ? '3px' : '0')};
 	padding: 10px 0;
 	justify-content: center;
