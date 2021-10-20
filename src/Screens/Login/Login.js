@@ -16,7 +16,7 @@ import {
 	getProfile as getKakaoProfile,
 } from '@react-native-seoul/kakao-login';
 import jwtDecode from 'jwt-decode';
-import Logo from '~/Assets/Images/Login_logo1.svg';
+import Logo from '~/Assets/Images/Login_logo01.svg';
 import LoadingModal from '~/Components/LoadingModal';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {TouchableWithoutFeedback} from 'react-native';
@@ -418,7 +418,7 @@ const Login = ({navigation}) => {
 								</OptionsButton>
 							</OptionsWrap>
 						</OptionsContainer>
-						<EasyLoginContainer>
+						{/* <EasyLoginContainer>
 							<EasyLoginWrap>
 								<DiveBar />
 								<EasyLoginLabel>간편 로그인</EasyLoginLabel>
@@ -437,7 +437,7 @@ const Login = ({navigation}) => {
 									</EasyLoginButton>
 								)}
 							</EasyLoginWrap>
-						</EasyLoginContainer>
+						</EasyLoginContainer> */}
 					</LoginContainer>
 					<LoadingModal visible={loading} />
 				</ScrollView>

@@ -826,6 +826,7 @@ const PartnerList = ({navigation}) => {
 
 			<PartnerProfile
 					data={companyDetail}
+					type={memberType}
 					visible={showProfile}
 					setVisible={setShowProfile}
 				/>

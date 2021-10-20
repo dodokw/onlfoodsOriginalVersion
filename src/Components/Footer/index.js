@@ -67,7 +67,7 @@ ${item.st_company_add}
 				<TermNav onPress={() => goTerms(1)}><TermLabel>이용약관</TermLabel></TermNav>
 				<TermNav onPress={() => goTerms(2)}><TermLabel>개인정보처리방침</TermLabel></TermNav>
 				<TermNav onPress={() => goTerms(3)}><TermLabel>위치기반서비스이용약관</TermLabel></TermNav>
-				<TermNav onPress={() => goTerms(4)}><TermLabel>마케팅정보수집동의</TermLabel></TermNav>
+				<TermNav onPress={() => goTerms(4)}><TermLabel>마케팅활용동의</TermLabel></TermNav>
 			</TermWrap>
 			<FooterWrap>
 			<Title>{item.st_company_name}</Title>

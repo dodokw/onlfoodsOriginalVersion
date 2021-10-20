@@ -147,7 +147,8 @@ const CategoryButtonLabel = styled.Text`
 `;
 
 const ContentItem = styled.View`
-	height: ${HEIGHT - 50}px;
+	// height: ${HEIGHT - 50}px;
+	flex:1;
 	background-color: #ffffff;
 `;
 
@@ -675,7 +676,7 @@ const TodayIn = ({navigation}) => {
 									<ListWarningLabel>오늘만 상품이 없습니다.</ListWarningLabel>
 								)
 							}
-							// ListFooterComponent={footerData && <Footer item={footerData} />}
+							ListFooterComponent={footerData && <Footer item={footerData} />}
 							refreshing={true}
 							refreshControl={
 								<RefreshControl
@@ -694,7 +695,7 @@ const TodayIn = ({navigation}) => {
 						/>
 					</ContentItem>
 				)}
-					{footerData && <Footer item={footerData} />}
+					
 
 			</Animated.View>
 			<MainHeader
