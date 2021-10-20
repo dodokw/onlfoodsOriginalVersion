@@ -373,7 +373,7 @@ const TodayEventDetail = ({navigation, route}) => {
 				}
 			/>
 			<ScrollView bounces={false} contentContainerStyle={{paddingBottom: 30}}>
-				<CompanyContainer>
+				{/* <CompanyContainer>
 					<CompanyTouch
 						onPress={() =>
 							navigation.navigate('DeliverPickupDetail', {
@@ -422,7 +422,7 @@ const TodayEventDetail = ({navigation, route}) => {
 							</CloseButton>
 						</CloseButtonWrap>
 					</CompanyOptionWrap>
-				</CompanyContainer>
+				</CompanyContainer> */}
 				{showImage && (
 					<ImageContainer>
 						<MainImage source={ imageArr[imageIndex] !== undefined ?{uri: imageArr[imageIndex]} : require('~/Assets/Images/noImage.png')} />
@@ -445,7 +445,7 @@ const TodayEventDetail = ({navigation, route}) => {
 						<ProductName>{data.et_name}</ProductName>
 						<Wrap>
 							<ProductPeriod>
-								{data.et_sdate} ~ {data.et_edate}
+								기간 : {data.et_sdate} ~ {data.et_edate}
 							</ProductPeriod>
 						</Wrap>
 					</Wrap>
@@ -473,11 +473,11 @@ const TodayEventDetail = ({navigation, route}) => {
 						</ReportButton>
 					)}
 				</DocInfo>
-				<ProductOrder>
+				{/* <ProductOrder>
 					<ChatButton onPress={goChatting}>
 						<ChatLabel>업체 보기</ChatLabel>
 					</ChatButton>
-				</ProductOrder>
+				</ProductOrder> */}
 			</ScrollView>
 			<LoadingModal visible={loadingData} />
 			<ReportModal
