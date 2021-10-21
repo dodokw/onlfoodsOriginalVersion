@@ -824,12 +824,12 @@ const PartnerList = ({navigation}) => {
 				</PartnerTypeWrap>
 			</ScrollView>
 
-			<PartnerProfile
+			{/* <PartnerProfile
 					data={companyDetail}
 					type={memberType}
 					visible={showProfile}
 					setVisible={setShowProfile}
-				/>
+				/> */}
 			<PartnerProfile
 				data={partnerDetail}
 				type={memberType}
