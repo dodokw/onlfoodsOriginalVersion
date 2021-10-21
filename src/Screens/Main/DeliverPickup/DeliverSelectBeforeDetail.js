@@ -77,10 +77,11 @@ const DeliverSelectBeforeDetail = ({route, navigation}) => {
     const datacheck = () => {
         try{
             setDataMap(
-                data.map(({mt_idx, mt_name, slt_company_boss}) => ({
+                data.map(({mt_idx, mt_name, slt_company_boss, mt_image1}) => ({
                    idx: mt_idx,
                    name: mt_name,
-                   company_position: slt_company_boss
+                   company_position: slt_company_boss,
+                   img: mt_image1
                   }))
              );
         }catch(err){
@@ -139,7 +140,7 @@ const DeliverSelectBeforeDetail = ({route, navigation}) => {
                     <Image
                         // require('~/Assets/Images/foodinus.png')
                         source={{
-                            uri: 'https://onlfoods.com/images/uploads/' + item.company_image,
+                            uri: 'https://onlfoods.com/images/uploads/' + item.img,
                         }}
                         style={{
                             resizeMode: 'cover',
