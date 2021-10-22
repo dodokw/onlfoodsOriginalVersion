@@ -321,6 +321,7 @@ const TodayEventDetail = ({navigation, route}) => {
 				const decode = jwtDecode(res.jwt);
 				setData(decode.data);
 				setImageArr([decode.data.et_thumbnail, ...decode.data.et_image]);
+				console.log(decode.data.et_thumbnail+decode.data.et_image);
 			} else {
 				console.log(res);
 			}

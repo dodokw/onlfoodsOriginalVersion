@@ -381,6 +381,11 @@ const EnrollEvent = ({navigation, route}) => {
 		// 		{text: '확인'},
 		// 	]);
 		// }
+		if (mainImg !== undefined && subImg.length === 0) {
+			return Alert.alert('알림', '이미지 추가시 추가이미지는 최소 1장이 있어야합니다.', [
+				{text: '확인'},
+			]);
+		}
 		if (
 			title.replace(/ /g, '').trim() === '' ||
 			type === '' ||
@@ -435,11 +440,16 @@ const EnrollEvent = ({navigation, route}) => {
 		// 		{text: '확인'},
 		// 	]);
 		// }
-		// if (subImg.length === 0) {
+		// if (subImg.length !== 0) {
 		// 	return Alert.alert('알림', '추가이미지는 최소 1장이 있어야합니다.', [
 		// 		{text: '확인'},
 		// 	]);
 		// }
+		if (mainImg !== undefined) {
+			return Alert.alert('알림', '추가이미지는 최소 1장이 있어야합니다.', [
+				{text: '확인'},
+			]);
+		}
 		if (
 			title.replace(/ /g, '').trim() === '' ||
 			type === '' ||
