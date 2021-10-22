@@ -773,7 +773,7 @@ const PartnerList = ({navigation}) => {
 					{companyOpen && (
 						<FlatList
 							style={{paddingHorizontal: 20}}
-							contentContainerStyle={{paddingBottom: 50}}
+							contentContainerStyle={{paddingBottom: 20}}
 							data={bizFriendData}
 							keyExtractor={item => {
 								item.idx;
@@ -805,7 +805,7 @@ const PartnerList = ({navigation}) => {
 					{partnerOpen && (
 						<FlatList
 							style={{paddingHorizontal: 20}}
-							contentContainerStyle={{paddingBottom: 50}}
+							contentContainerStyle={{paddingBottom: 100}}
 							data={companyListData}
 							keyExtractor={item => {
 								item.idx;

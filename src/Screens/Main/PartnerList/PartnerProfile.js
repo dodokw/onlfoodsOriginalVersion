@@ -57,7 +57,7 @@ const InfoWrap=styled.View`
 `;
 const CompanyName=styled.Text`
     font-size : 16px;
-    margin-bottom:10px;
+    margin-bottom:7px;
     font-family: ${FONTNanumGothicRegular};
 `;
 const CompanyNum=styled.Text`
