@@ -1,96 +1,189 @@
-import React, { useEffect, useState } from 'react';
-import {Text, View, FlatList, Alert} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {Text, View, FlatList, Alert, LogBox, Image} from 'react-native';
 import styled from 'styled-components/native';
 import Header from '~/Components/Header';
 import BackButton from '~/Components/BackButton';
 import axios from 'axios';
 import LoadingSpinner from '~/Components/LoadingSpinner';
-import { useIsFocused } from '@react-navigation/core';
+import {useIsFocused} from '@react-navigation/core';
 import PartnerCard from '~/Components/PartnerCard/PartnerCard';
 
+const Container = styled.View`
+	flex: 1;
+	background-color: #fff;
+`;
+const ContentWrap = styled.View`
+        
+`;
+const ManagerListWrap = styled.View`
+    
+`;
+const ManagerListTop=styled.View`
+    padding:5px 10px;
+`;
+const ManagerCount = styled.Text`
+    text-align:right;
+`;
+
+const ManagerList = styled.TouchableOpacity`
+    flex-direction:row;
+    padding:10px 0;
+    align-items:center;
+	
+`;
+const ManagerImage= styled.View`
+    position: relative;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border-width: 1px;
+    border-color: #dfdfdf;
+`;
+
+const ManagerName = styled.Text`
+    padding : 0 10px;
+`;
+const ManagerPosition=styled.Text``;
+
+
 const DeliverSelectBeforeDetail = ({route, navigation}) => {
+	// const {slt_idx} = route.params;
+	// const [data, setData] = useState([]);
+	const {data} = route.params;
+	const [dataMap, setDataMap] = useState([]);
+	const [loading, setLoading] = useState(false);
+	const [countManager, setCountManager] = useState();
+	const isFocused = useIsFocused();
 
-    const {data} = route.params;
-    const [dataMap, setDataMap] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [countManager, setCountManager] = useState();
-    const isFocused = useIsFocused();
+	// const getManagerList = async () => {
+	//     setLoading(true);
+	//     try{
+	//     const form = new FormData();
+	//     form.append('slt_idx', slt_idx);
+	//     const res = await axios.post('https://onlfoods.com/api/getManager_list.php', form);
+	//     // console.log(res.data); //데이터 체크
+	//     // console.log(res.data.length);
+	//     setCountManager(res.data.length);
+	//     setData(res.data);
+	//     }catch(err){
+	//         console.log(err);
+	//     }
+	// }
 
-    // const getManagerList = async () => {
-    //     setLoading(true);
-    //     try{
-    //     const form = new FormData();
-    //     form.append('slt_idx', slt_idx);
-    //     const res = await axios.post('https://onlfoods.com/api/getManager_list.php', form);
-    //     // console.log(res.data); //데이터 체크
-    //     // console.log(res.data.length);
-    //     if(res.data.length === 1){
-    //          navigation.navigate('DeliverPickupDetail', {
-	// 	     slt_idx: slt_idx,
-	// 		 before: 'DeliverPickup',
-	//      })
-    //     }
-    //     setData(res.data);
-    //     }catch(err){
-    //         console.log(err);
-    //     }
-    // }
+	const datacheck = () => {
+		try {
+			setDataMap(
+				data.map(({mt_idx, mt_image1, mt_name, slt_company_boss}) => ({
+					idx: mt_idx,
+                    img: mt_image1,
+					name: mt_name,
+					company_position: slt_company_boss,
+				})),
+			);
+		} catch (err) {
+			console.log(err);
+		}
+		console.log('실행확인');
+	};
 
-    const datacheck = () => {
-        try{
-            setDataMap(
-                data.map(({mt_idx, mt_name, slt_company_boss, mt_image1}) => ({
-                   idx: mt_idx,
-                   name: mt_name,
-                   company_position: slt_company_boss,
-                   img: mt_image1
-                  }))
-             );
-        }catch(err){
-            console.log(err);
-        }
-         console.log("실행확인");
-    }
+	useEffect(() => {
+		LogBox.ignoreLogs(['Each child in a list should have a unique']);
+		console.log(data);
+	});
 
-    // useEffect(() => {
-    //     getManagerList();
-    //     setLoading(false);
-    // }, [isFocused])
+	// useEffect(() => {
+	//     getManagerList();
+	//     setLoading(false);
+	// }, [isFocused])
 
-    useEffect(() => {
-        datacheck();
-    }, [data])
+	useEffect(() => {
+		if(isFocused){
+			datacheck();
+		}
+	}, [isFocused]);
 
-    return(
-        <View>
-            <Header
+	return (
+		<Container>
+			<Header
 				headerLeft={<BackButton onPress={() => navigation.goBack()} />}
-				title={'매니저 선택창'}
+				title={data[0].slt_company_name + ' 담당자'}
 				border
 			/>
-            
-            {loading ? (<LoadingSpinner/>) :(
-            <FlatList
-            style={{paddingHorizontal: 20}}
-            contentContainerStyle= {{paddingBottom: 50}}
-            data={dataMap}
-            keyExtractor={item => {item.mt_idx}}
-            renderItem={({item}) => (
-                <PartnerCard
-                    data={item}
-                    onPress={()=>  navigation.navigate('DeliverPickupDetail', {
-                         	slt_idx: item.idx,
-                         	before: 'DeliverPickup',
-                         })}
-                />
-            )}
-            bounces={false}
-        />
-            )} 
-            
-
-        </View>
-    )
-}
+			<FlatList
+							style={{paddingHorizontal: 20}}
+							contentContainerStyle={{paddingBottom: 50}}
+							data={dataMap}
+							keyExtractor={item => {
+								item.idx;
+							}}
+							renderItem={({item}) => (
+								<PartnerCard
+									data={item}
+									// onPress={()=> setShowSub(true)}
+									onPress={() => navigation.navigate('DeliverPickupDetail', {
+										slt_idx: item.idx,
+										before: 'DeliverPickup',
+									})}
+									// onPress={() => navigation.navigate('PartnerProfile', {item})}
+								/>
+							)}
+							bounces={false}
+						/>
+			{/* <ContentWrap>
+				<ManagerListWrap>
+                    <ManagerListTop>
+					<ManagerCount>담당자 인원: {data.length}</ManagerCount>
+					</ManagerListTop>
+						{loading ? (
+							<LoadingSpinner />
+						) : (
+							<FlatList
+								style={{paddingHorizontal: 20}}
+								contentContainerStyle={{paddingBottom: 50}}
+								data={dataMap}
+								keyExtractor={item => {
+									item.mt_idx;
+								}}
+								renderItem={({item}) => (
+                                    <ManagerList onPress={() =>
+                                        navigation.navigate('DeliverPickupDetail', {
+                                            slt_idx: item.idx,
+                                            before: 'DeliverPickup',
+                                        })
+                                    }>
+									<ManagerImage>
+										<Image
+											// require('~/Assets/Images/foodinus.png')
+											source={{
+												uri: 'https://onlfoods.com/images/uploads/' + item.company_image,
+											}}
+											style={{
+												resizeMode: 'cover',
+												width: 40,
+												height: 40,
+												alignItems: 'center',
+												justifyContent: 'center',
+												borderRadius: 30,
+												borderWidth: 1,
+												borderColor: '#dfdfdf',
+											}}
+											resizeMode="cover"
+										/>
+									</ManagerImage>
+                                    
+                                    <ManagerName><Text>이름 : </Text>{item.name}</ManagerName>
+                                    <ManagerPosition>({item.company_position})</ManagerPosition>
+                                    
+                                    </ManagerList>
+                                    
+						)}
+					/>)}
+				</ManagerListWrap>
+			</ContentWrap> */}
+		</Container>
+	);
+};
 
 export default DeliverSelectBeforeDetail;
