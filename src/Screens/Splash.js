@@ -161,18 +161,21 @@ const Splash = ({isLoading, setLoading}) => {
 				<LogoWrap>
 					<Svg
 						xmlns="http://www.w3.org/2000/svg"
-						width="173"
-						height="150.203"
-						viewBox="0 0 173 150.203">
+						width="200"
+						height="200.203"
+						viewBox="0 0 173 200.203">
 						<G id="스플레시로고" transform="translate(-121 -273.399)">
 							<Text
 								id="식자재_재고정보공유_플랫폼"
 								data-name="식품/식자재 거래관리 플랫폼"
-								transform="translate(121 418.601)"
+								transform="translate(110 418.601)"
 								fill="#fff"
 								fontSize="15">
 								<TSpan x="0" y="0">
-								식품/식자재 거래관리 플랫폼
+								식품/식자재/외식 푸드 비즈니스
+								</TSpan>
+								<TSpan x="40" y="20">
+								거래처 관리 플랫폼
 								</TSpan>
 							</Text>
 							<G id="로고" transform="translate(17.068 -66.892)">

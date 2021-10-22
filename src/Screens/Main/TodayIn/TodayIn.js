@@ -78,8 +78,8 @@ const BannerMask = styled.Image`
 
 const ContentContainer = styled.View`
 	background-color: #ffffff;
-	padding: 0 20px;
-	border-top-left-radius: ${props => (props.radius ? '25px' : '0px')};
+	position:relative;
+	flex:1;
 `;
 
 const ContentTitleLabel = styled.Text`
@@ -147,8 +147,7 @@ const CategoryButtonLabel = styled.Text`
 `;
 
 const ContentItem = styled.View`
-	// height: ${HEIGHT - 50}px;
-	flex:1;
+	height: ${HEIGHT - 50}px;
 	background-color: #ffffff;
 `;
 
@@ -593,6 +592,7 @@ const TodayIn = ({navigation}) => {
 					/>
 				</BannerContainer>
 
+				<ContentContainer>
 				<Animated.View
 					style={{
 						backgroundColor: '#ffffff',
@@ -696,7 +696,7 @@ const TodayIn = ({navigation}) => {
 					</ContentItem>
 				)}
 					
-
+		</ContentContainer>
 			</Animated.View>
 			<MainHeader
 				navigation={navigation}

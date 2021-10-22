@@ -29,13 +29,17 @@ const Container = styled.View`
 	background-color: #ffffff;
 	padding: 0 40px;
 `;
+const Wrap = styled.View`
+	flex:1;
+`;
 
-const LoginContainer = styled.View``;
+const LoginContainer = styled.View`
+`;
 
 const LogoWrap = styled.View`
-	justify-content: center;
 	align-items: center;
-	margin: 50px 0;
+	margin-top:100px;
+	padding:20px;
 `;
 
 const LoginWrap = styled.KeyboardAvoidingView`
@@ -348,6 +352,7 @@ const Login = ({navigation}) => {
 		<TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
 			<Container>
 				<ScrollView bounces={false} showsVerticalScrollIndicator={false}>
+				<Wrap>
 					<LogoWrap>
 						<SvgXml xml={Logo} />
 					</LogoWrap>
@@ -440,6 +445,7 @@ const Login = ({navigation}) => {
 						</EasyLoginContainer> */}
 					</LoginContainer>
 					<LoadingModal visible={loading} />
+					</Wrap>
 				</ScrollView>
 			</Container>
 		</TouchableWithoutFeedback>

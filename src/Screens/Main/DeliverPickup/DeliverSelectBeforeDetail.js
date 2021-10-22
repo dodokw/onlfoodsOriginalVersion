@@ -6,7 +6,7 @@ import BackButton from '~/Components/BackButton';
 import axios from 'axios';
 import LoadingSpinner from '~/Components/LoadingSpinner';
 import { useIsFocused } from '@react-navigation/core';
-import PartnerCard from '~/Components/PartnerCard/PartnerCard';
+import ManagerCard from '~/Components/ManagerCard';
 
 
 const Container = styled.View`
@@ -123,43 +123,43 @@ const DeliverSelectBeforeDetail = ({route, navigation}) => {
             keyExtractor={item => {item.mt_idx}}
             renderItem={({item}) => (
                 
-                // <PartnerCard
-                //     data={item}
-                //     onPress={()=>  navigation.navigate('DeliverPickupDetail', {
-                //          	slt_idx: item.idx,
-                //          	before: 'DeliverPickup',
-                //          })}
-                // />
-                <ManagerList onPress={() =>
-                    navigation.navigate('DeliverPickupDetail', {
-                        slt_idx: item.idx,
-                        before: 'DeliverPickup',
-                    })
-                }>
-                <ManagerImage>
-                    <Image
-                        // require('~/Assets/Images/foodinus.png')
-                        source={{
-                            uri: 'https://onlfoods.com/images/uploads/' + item.img,
-                        }}
-                        style={{
-                            resizeMode: 'cover',
-                            width: 40,
-                            height: 40,
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            borderRadius: 30,
-                            borderWidth: 1,
-                            borderColor: '#dfdfdf',
-                        }}
-                        resizeMode="cover"
-                    />
-                </ManagerImage>
+                <ManagerCard
+                    data={item}
+                    onPress={()=>  navigation.navigate('DeliverPickupDetail', {
+                         	slt_idx: item.idx,
+                         	before: 'DeliverPickup',
+                         })}
+                />
+                // <ManagerList onPress={() =>
+                //     navigation.navigate('DeliverPickupDetail', {
+                //         slt_idx: item.idx,
+                //         before: 'DeliverPickup',
+                //     })
+                // }>
+                // <ManagerImage>
+                //     <Image
+                //         // require('~/Assets/Images/foodinus.png')
+                //         source={{
+                //             uri: 'https://onlfoods.com/images/uploads/' + item.img,
+                //         }}
+                //         style={{
+                //             resizeMode: 'cover',
+                //             width: 40,
+                //             height: 40,
+                //             alignItems: 'center',
+                //             justifyContent: 'center',
+                //             borderRadius: 30,
+                //             borderWidth: 1,
+                //             borderColor: '#dfdfdf',
+                //         }}
+                //         resizeMode="cover"
+                //     />
+                // </ManagerImage>
                 
-                <ManagerName>{item.name}</ManagerName>
-                <ManagerPosition>{item.company_position}</ManagerPosition>
+                // <ManagerName>{item.name}</ManagerName>
+                // <ManagerPosition>{item.company_position}</ManagerPosition>
                 
-                </ManagerList>
+                // </ManagerList>
             )}
             // bounces={false}
         />
