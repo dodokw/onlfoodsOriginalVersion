@@ -25,7 +25,7 @@ const CloseButton = styled.TouchableOpacity``;
 const CloseLabel = styled.Text`
     font-size:18px;
     padding:5px;
-    font-family:${FONTNanumGothicBold}
+    font-family:${FONTNanumGothicBold};
 `;
 const ProfileBox = styled.View `
     width:100%;
@@ -44,10 +44,7 @@ const ProfileInfo = styled.View`
 const ImgBox=styled.View`
     width: 80px;
     height: 80px;
-    background-color: #f8f8f8;
-    border-width: 1px;
-    border-color: #e6ebee;
-    border-radius: 50px;
+
     justify-content: center;
     align-items: center;
     margin:10px;
