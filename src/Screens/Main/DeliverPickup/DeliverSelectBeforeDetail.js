@@ -7,6 +7,7 @@ import axios from 'axios';
 import LoadingSpinner from '~/Components/LoadingSpinner';
 import { useIsFocused } from '@react-navigation/core';
 import ManagerCard from '~/Components/ManagerCard';
+import PartnerCard from '~/Components/PartnerCard/PartnerCard';
 
 
 const Container = styled.View`
@@ -110,8 +111,8 @@ const DeliverSelectBeforeDetail = ({route, navigation}) => {
 				title={data[0].slt_company_name}
 				border
 			/>
-            <ContentWrap>
-                <ManagerListWrap>
+            {/* <ContentWrap> */}
+                {/* <ManagerListWrap> */}
                 <ManagerListTop>
             <ManagerCount>담당자 인원: {data.length}</ManagerCount>
             </ManagerListTop>
@@ -123,7 +124,7 @@ const DeliverSelectBeforeDetail = ({route, navigation}) => {
             keyExtractor={item => {item.mt_idx}}
             renderItem={({item}) => (
                 
-                <ManagerCard
+                <PartnerCard
                     data={item}
                     onPress={()=>  navigation.navigate('DeliverPickupDetail', {
                          	slt_idx: item.idx,
@@ -164,8 +165,8 @@ const DeliverSelectBeforeDetail = ({route, navigation}) => {
             // bounces={false}
         />
             )} 
-        </ManagerListWrap>
-        </ContentWrap>
+        {/* </ManagerListWrap> */}
+        {/* </ContentWrap> */}
         </Container>
     )
 }
