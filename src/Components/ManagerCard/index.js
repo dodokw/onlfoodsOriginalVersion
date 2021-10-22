@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components/native";
 import {Image} from 'react-native';
 
-const Container=styled.View`
+const Container=styled.TouchableOpacity`
     flex:1;
     padding:8px 0;
     border-bottom-width:0.5px;
