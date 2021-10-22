@@ -400,6 +400,19 @@ const PartnerList = ({navigation}) => {
 		}
 		console.log('실행확인');
 	};
+	// const testApi = async () => {
+	// 	setLoading(true);
+	// 	const form = new FormData();
+	// 	form.append(secretKey, 'secretKey');
+	// 	const res = axios.post('https://onlfoods.com/api/', form);
+	// 	console.log(res.data);
+	// 	res.data.map(item => {
+	// 		const phone = item.mt_hp
+	// 	friendNum.map(item => {
+			
+	// 	})
+	// 	})
+	// }
 
 	const sendPhoneNumAPI = async () => {
 		setLoading(true);
@@ -773,7 +786,7 @@ const PartnerList = ({navigation}) => {
 					{companyOpen && (
 						<FlatList
 							style={{paddingHorizontal: 20}}
-							contentContainerStyle={{paddingBottom: 20}}
+							contentContainerStyle={{paddingBottom: 50}}
 							data={bizFriendData}
 							keyExtractor={item => {
 								item.idx;
@@ -805,7 +818,7 @@ const PartnerList = ({navigation}) => {
 					{partnerOpen && (
 						<FlatList
 							style={{paddingHorizontal: 20}}
-							contentContainerStyle={{paddingBottom: 100}}
+							contentContainerStyle={{paddingBottom: 50}}
 							data={companyListData}
 							keyExtractor={item => {
 								item.idx;
