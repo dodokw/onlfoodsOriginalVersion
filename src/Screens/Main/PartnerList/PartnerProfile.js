@@ -39,7 +39,7 @@ const ProfileBox = styled.View `
 const ProfileInfo = styled.View`
     flex-direction:row;
     align-items:center;
-    margin-bottom:10px;
+    margin-bottom:5px;
 `;
 const ImgBox=styled.View`
     width: 80px;
@@ -69,6 +69,7 @@ font-family: ${FONTNanumGothicRegular};
 const ButtonWrap = styled.View`
     flex-direction:row;
     justify-content:space-around;
+    padding-bottom:12px;
 `;
 const ButtonBox= styled.TouchableOpacity`
     width:45%;

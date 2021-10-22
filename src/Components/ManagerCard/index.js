@@ -29,7 +29,7 @@ const ManagerGrade=styled.Text``;
 
 const ManagerCard =({data, onPress})=>{
 return(
-    <Container>
+    <Container onPress={onPress}>
         <ManagerWrap>
             <ManagerImage>
                 <Image
