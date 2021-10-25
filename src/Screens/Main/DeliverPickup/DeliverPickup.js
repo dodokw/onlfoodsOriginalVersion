@@ -476,7 +476,7 @@ const DeliverPickup = ({navigation}) => {
 							<FlatList
 								style={{flex: 1}}
 								showsVerticalScrollIndicator={false}
-								contentContainerStyle={{paddingBottom: 300}}
+								contentContainerStyle={{paddingBottom: 100}}
 								data={data}
 								keyExtractor={item => `CompanyCard-${item.mt_idx}`}
 								renderItem={({item}) => (
