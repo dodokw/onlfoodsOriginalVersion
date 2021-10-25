@@ -11,6 +11,7 @@ import {ColorRed} from '~/Assets/Style/Colors';
 import Icon from 'react-native-vector-icons/Feather';
 import {useSelector} from 'react-redux';
 import axios from 'axios';
+import { testURL } from '~/API/default';
 
 const Container = styled.TouchableOpacity`
 	flex-direction: row;
@@ -112,7 +113,7 @@ const CompanyCard = ({item, onPress}) => {
         try{
         const form = new FormData();
         form.append('slt_idx', item.mt_idx);
-        const res = await axios.post('https://onlfoods.com/api/getManager_list.php', form);
+        const res = await axios.post(testURL+'getManager_list.php', form);
 		// console.log(res.data);
 		setCountManager(res.data.length);
 		}catch(err){

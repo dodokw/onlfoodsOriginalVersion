@@ -33,7 +33,7 @@ import LoadingSpinner from '~/Components/LoadingSpinner';
 import NoticeCard from '~/Components/NoticeCard';
 import axios from 'axios';
 import dayjs from 'dayjs';
-import { secretKey } from '~/API/default';
+import { secretKey, testURL } from '~/API/default';
 
 const Container = styled.View`
 	flex: 1;
@@ -445,7 +445,7 @@ const DeliverPickupDetail = ({navigation, route}) => {
 			form.append('secretKey', secretKey);
 			form.append('sellerIdx', seller_idx);
 			form.append('todayDate', todayDate);
-			const res = await axios.post('https://onlfoods.com/api/seller_notice_beta.php',form);
+			const res = await axios.post(testURL+'seller_notice_beta.php',form);
 			console.log(res.data);
 			if(res.data !== null){
 				setDatas(res.data);
@@ -669,7 +669,7 @@ const DeliverPickupDetail = ({navigation, route}) => {
 				</TabWrap>
 			</TabContainer>
 			
-			{tabState===0 && (items === undefined ? (<LoadingSpinner/>):(
+			{tabState===0 &&
 				<StockWrap>
 				<ContentCategory>
 					{categoryList.map((item, index) => (
@@ -884,7 +884,7 @@ const DeliverPickupDetail = ({navigation, route}) => {
 					)}
 				</StockContainer>
 				</StockWrap>
-			))}
+			}
 {tabState===1 && (isLoading === true ? (<LoadingSpinner/>):(
 				<NoticeWrap>
 				{/* <Button title='test' onPress={()=>getList()}/> */}

@@ -19,7 +19,7 @@ import PartnerCard from '~/Components/PartnerCard/PartnerCard';
 import {FlatList} from 'react-native-gesture-handler';
 import {ScrollView} from 'react-native';
 import {APICallFriendList} from '~/API/MainAPI/MainAPI';
-import {secretKey} from '~/API/default';
+import {secretKey, testURL} from '~/API/default';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import PartnerProfile from './PartnerProfile';
 import Icon from 'react-native-vector-icons/Feather';
@@ -252,7 +252,7 @@ const PartnerList = ({navigation}) => {
 		form.append('secretKey', secretKey);
 		form.append('idx', idx);
 
-		const res = await axios.post('https://onlfoods.com/api/bizNumSame_friend_search.php', form);
+		const res = await axios.post(testURL+'bizNumSame_friend_search.php', form);
 		if (res.data.result === 'true') {
             const decode = jwtDecode(res.data.jwt);
 			console.log('----------------------------------여기---------------------------------');
@@ -406,13 +406,17 @@ const PartnerList = ({navigation}) => {
 	// 	form.append(secretKey, 'secretKey');
 	// 	const res = axios.post('https://onlfoods.com/api/', form);
 	// 	console.log(res.data);
-	// 	res.data.map(item => {
-	// 		const phone = item.mt_hp
 	// 	friendNum.map(item => {
-			
+	// 		const phone = item
+	// 	res.data.map(items => {
+	// 		if(item === items.mt_hp){
+	// 			setDatas(items);
+	// 		}
 	// 	})
 	// 	})
 	// }
+
+
 
 	const sendPhoneNumAPI = async () => {
 		setLoading(true);
@@ -422,7 +426,7 @@ const PartnerList = ({navigation}) => {
 		  form.append('secretKey', secretKey);
 		  form.append('phoneNum', friendNum[i]);
 		//   form.append('userBizNum', userSellerInfo);
-		  const res = await axios.post('https://onlfoods.com/api/friend_search.php', form);
+		  const res = await axios.post(testURL+'friend_search.php', form);
 		  const decode = jwtDecode(res.data.jwt);
 		  if(decode.data !== null && decode.data.mt_idx !== user.mt_idx && decode.data.slt_company_num !== userSellerInfo){
 			  setDatas(datas => [...datas, decode.data]);
@@ -456,7 +460,7 @@ const PartnerList = ({navigation}) => {
 		form.append('slt_company_num', slt_company_num);
 		form.append('userMt_idx', user.mt_idx);
 		const res = await axios.post(
-			'https://onlfoods.com/api/onBizNumSame.php',
+			testURL+'onBizNumSame.php',
 			form,
 		);
 		console.log(res.data);
@@ -664,6 +668,10 @@ const PartnerList = ({navigation}) => {
 			console.log(err);
 		}
 	}, [bizFriend]);
+
+	useEffect(() => {
+		console.log(friendNum+'이게전화번호야?');
+	}, [friendNum])
 	// useEffect(() => {
 	// 	_storeData3();
 	// }, [userProfileInfo]);

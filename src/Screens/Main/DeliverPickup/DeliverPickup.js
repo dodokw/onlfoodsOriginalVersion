@@ -26,6 +26,7 @@ import {Easing} from 'react-native';
 import MainHeader from '~/Components/MainHeader';
 import DeliverPickupCheck from './DeliverPickupCheck';
 import axios from 'axios';
+import { testURL } from '~/API/default';
 
 const WIDTH = Dimensions.get('screen').width;
 const HEIGHT = Dimensions.get('screen').height;
@@ -204,7 +205,7 @@ const DeliverPickup = ({navigation}) => {
         try{
         const form = new FormData();
         form.append('slt_idx', item.mt_idx);
-        const res = await axios.post('https://onlfoods.com/api/getManager_list.php', form);
+        const res = await axios.post(testURL+'getManager_list.php', form);
         console.log(res.data);
         if(res.data.length === 1){
              navigation.navigate('DeliverPickupDetail', {

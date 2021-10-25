@@ -8,6 +8,7 @@ import {FONTNanumGothicRegular,FONTNanumGothicBold } from '~/Assets/Style/Fonts'
 import PartnerList from './PartnerList';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
+import { testURL } from '~/API/default';
 
 const Container = styled.View`
 	flex: 1;
@@ -117,7 +118,7 @@ const ButtonLabel=styled.Text`
             console.log('slt_idx = '+ slt_idx);
             form.append('userIdx', user.mt_idx);
             form.append('slt_idx', slt_idx);
-            const res = await axios.post('https://onlfoods.com/api/newChatting.php', form);
+            const res = await axios.post(testURL+'newChatting.php', form);
             if(res.data[0].idx !== null && res.data[0].idx !== undefined){
                 console.log(res.data[0].idx+"<- 채팅인덱스를 가져온거것입니다.");
                 setChatIdx(res.data[0].idx);
@@ -217,7 +218,7 @@ const ButtonLabel=styled.Text`
 		try {
 			navigation.navigate('DeliverPickupDetail', {
 				slt_idx: slt_idx,
-				before: 'PartnerList',
+				before: 'PartnerProfile',
 			});
 		} catch (err) {
 			Alert.alert('알림', err.message, [
