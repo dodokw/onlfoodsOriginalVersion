@@ -249,7 +249,7 @@ function SellerRegister({navigation, route}) {
 				businessTime === '' ||
 				businessPhone === '' ||
 				mainItem === '' ||
-				channel === '' ||
+				channel === '1' ||
 				payment === ''
 			) {
 				return Alert.alert('알림', '추가정보에 비어진 곳이 있습니다.', [
