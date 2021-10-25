@@ -7,7 +7,7 @@ export const originURL = 'https://onlfoods.com/api/';
 export const testURL = 'https://sellwefood.com/api/';
 
 const API = axios.create({
-	baseURL: testURL,
+	baseURL: originURL,
 	timeout: 5000,
 	headers: {'content-type': 'multipart/form-data'},
 });

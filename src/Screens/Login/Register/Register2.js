@@ -24,7 +24,7 @@ import {APICallGeo} from '../../../API/MainAPI/MainAPI';
 import {useSelector} from 'react-redux';
 import LoadingModal from '~/Components/LoadingModal';
 import axios from 'axios';
-import { secretKey, testURL } from '~/API/default';
+import { originURL, secretKey, testURL } from '~/API/default';
 import jwtDecode from 'jwt-decode';
 
 const Container = styled.KeyboardAvoidingView`
@@ -195,7 +195,7 @@ function Register2({navigation, route}) {
 		const form = new FormData();
 		form.append('secretKey', secretKey);
 		form.append('bizNo', data.bizno);
-		const res = await axios.post(testURL+'getInfo_onSameBizNo.php', form);
+		const res = await axios.post(originURL+'getInfo_onSameBizNo.php', form);
 		const decode = jwtDecode(res.data.jwt);
 		console.log(decode.data);
 		setData({
